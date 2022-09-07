@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>
+    Bài 1: Cho mảng a chỉ chứa các số nguyên
+    Xây dựng mảng b là prefix sums của mảng a cụ thể theo công thức:
+    b[0]   = a[0]
+    b[1]   = a[0] + a[1]
+    b[2]   = a[0] + a[1] + a[2]
+    ...
+    b[n - 1] = a[0] + a[1] + ... + a[n - 1]
+    với n là độ dài của mảng a.
+    Ví dụ: Cho a = [1, 2, 3], thì kết quả prefixSums(a) = [1, 3, 6].
+    Mảng b được tạo ra: [1, 1 + 2, 1 + 2 + 3] = [1, 3, 6]
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    Bài 2: Cho 2 mảng A và B chứa số nguyên. Tìm ra một mảng đã được sắp xếp chứa các phần tử xuất hiện trong mảng B nhưng lại không xuất hiện A
+    Chú ý các phần tử giống nhau chỉ tính là 1 lần xuất hiện
+    Ví dụ:  A=[7,2,5,3,5,3] và B=[7,2,5,4,6,3,5,3] thì kết quả missingValue(A, B) = [4, 6]
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    Bài 3: Cho một danh sách các phân số, hãy tìm chỉ số của phân số lớn nhất (đếm từ 0)
+    Giả định rằng không có các phân số bằng nhau trong tập đầu vào
+    Ví dụ: numerators = [5, 2, 5] và denominators = [6, 3, 4], thì kết quả maxFraction(numerators, denominators) = 2.
+    ⇨	5/4 là phân số lớn nhất, có chỉ số là 2.
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    Bài 4: Viết một chương trình nhập một số từ bàn phím và in ra màn hình bằng chữ. Ví dụ 1234, kết quả in ra màn hình là một hai ba bốn.
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    Bài 5: Giả sử menu của chúng ta có các loại thức uống như sau:
+    Cafe
+    Cam vắt
+    Nước ép cà rốt
+    Nước ép cà chua
+    Nước lọc
+    Nước dừa
+    Viết một chương trình gọi thức uống đơn giản.
+    Gợi ý: Trước tiên in ra màn hinh danh sách các loại thức uống cho người dùng chọn lựa
+    Đánh dấu theo thứ tự 1 (cafe), 2 (cam vắt), 3(nước ép cà rốt), 4(nước ép cà chua), 5(nước lọc), 6(nước dừa), 7(thoát gọi món)
+    Khi người dùng lựa chọn 1 trong số các thức uống, chương trình sẽ hiện đơn giá của thức uống đó và cho phép người dùng nhập số lượng. Cuối cùng hiển thị tổng số tiền người dùng cần phải trả.
+    Sử dụng vòng lặp do while lặp lại cho người dùng đặt thức uống, kết thúc quá trình đặt thức uống khi người nhấn số 7
+
+</p>
+<label><button onclick="bai1()">Bài 1</button></label>
+<label><button onclick="bai2()">Bài 2</button></label>
+<label><button onclick="bai3()">Bài 3</button></label>
+<label><button onclick="bai4()">Bài 4</button></label>
+<label><button onclick="bai5()">Bài 5</button></label>
+<script src="yc3.js"></script>
+</body>
+</html>

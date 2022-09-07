@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Bài 2: Tính giai thừa của một số nguyên dương</p>
+<script>
+    let n = parseInt(prompt('nhap so nguyen duong can tinh giai thua'));
+    // function giaiThua(n) {
+    //     if (n==0){
+    //         return 1;
+    //     }
+    //     return n * giaiThua(n-1);
+    // }
+    // document.write(giaiThua(n));
+    let m=1;
+    if (n==0){
+        document.write('1');
+    }else {
+        for (let i =1;i <= n;i++){
+           m=m*i;
+        }
+        document.write(m);
+    }
+
+</script>
+</body>
+</html>

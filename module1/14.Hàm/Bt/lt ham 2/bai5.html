@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.</p>
+<script>
+    function min(a,b,c) {
+        if (a<b && a<c){
+            return a;
+        }else if (b<c) {
+            return b;
+        } else
+            return c;
+    }
+    let num1 = prompt('nhap so 1');
+    let num2 = prompt('nhap so 2');
+    let num3 = prompt('nhap so 3');
+    alert('so min:  ' + min(num1,num2,num3));
+</script>
+</body>
+</html>

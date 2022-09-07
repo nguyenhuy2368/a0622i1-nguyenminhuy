@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function deleteSpace(str) {
+        let arr1 = str.split(" ");
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] === "") {
+                arr1.splice(i, 1);
+            }
+        }
+        let arr2 = [];
+        for (let i = 0; i < arr1.length; i++) {
+            arr2.push(arr1[i].charAt(0).toUpperCase());
+        }
+        return arr2;
+    }
+
+    let str = prompt("Nhập một chuỗi: ").toLowerCase();
+    console.log(str);
+
+    if(str.split(" ").length <= 1){
+        alert("Chuỗi chỉ có 1 từ!");
+    }else {
+        let arr = deleteSpace(str);
+        console.log(arr);
+        alert("Chuỗi đã viết tắt là: " + arr.join(""));
+    }
+</script>
+</body>
+</html>

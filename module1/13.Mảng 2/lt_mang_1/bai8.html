@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Bài 8- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử. Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.</p>
+<script>
+    let array = [12, 0 , -23, 7, 12, -10, 99, -35, 3, 47];
+    document.write("Mảng khởi tạo array = ["+array + "]"+"<br>");
+    for (let i = 0; i < array.length - 1; i++){
+        for (let j = i+1; j< array.length; j ++){
+            if(array[i] < array[j]){
+                let flag = array[i];
+                array[i] = array[j];
+                array[j] = flag;
+
+            }
+        }
+    }
+    document.write("Mảng  sắp xếp giảm dần array = ["+array+  "]");
+</script>
+</body>
+</html>

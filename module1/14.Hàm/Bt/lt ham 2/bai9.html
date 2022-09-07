@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.</p>
+<script>
+    function inArray() {
+        let cnt = 0;
+        for (let i = 0; i < string.length; i++){
+            arr[i] = string.charAt(i);
+        }
+        console.log(arr);
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === a) {
+                cnt++;
+            }
+        }
+        if (cnt === 0){
+            return console.log(-1);
+        }else {
+            return alert("Số lần xuất hiện là: " + cnt);
+        }
+    }
+    let arr = [];
+    let string = prompt("Nhập chuỗi kí tự: ");
+    let a = prompt("Nhập kí tự cần tìm: ");
+    inArray();
+</script>
+</body>
+</html>

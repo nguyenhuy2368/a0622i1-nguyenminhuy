@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.</p>
+<script>
+    let a = [];
+    let size = prompt('so luong phan tu mang');
+    for (let i = 0; i < size ; i++) {
+        a[i]=parseInt(prompt('nhap cac phan tu mang'))
+    }
+    function reverseArr(arr){
+        return arr.reverse();
+    }
+    alert(reverseArr(a));
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Bài 7- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)</p>
+<script>
+    let arr=[];
+    let list=parseInt(prompt('so phan tu trong mang:'));
+    let yn=false;
+    let v=parseInt(prompt('V='));
+    for (i=0;i<list;i++){
+        arr[i]=parseInt(prompt('nhap gia tri phan tu trong mang'));
+        if (v===arr[i]){
+            arr.splice(i,1);
+            yn=true;
+        }
+    }
+    if (yn){
+        document.writeln('Thuộc' + '<br>');
+
+
+    }else {
+        document.writeln('Không thuộc');
+    }
+    document.writeln(arr)
+</script>
+</body>
+</html>

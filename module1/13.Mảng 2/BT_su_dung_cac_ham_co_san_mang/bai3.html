@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let string = 'The Quick Brown Fox';
+    let newString ='' ;
+    let upper ='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    for (i = 0; i<string.length;i++){
+        if (upper.indexOf(string[i])===-1) {
+            newString += string[i].toUpperCase();
+        }else {
+            newString += string[i].toLowerCase();
+        }
+    }
+    document.write(string+'<br>');
+    document.write(newString);
+</script>
+</body>
+</html>

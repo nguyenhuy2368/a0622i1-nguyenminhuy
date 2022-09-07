@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Đổi độ C sang độ F</h2>
+<label>Nhập giá trị độ C</label>
+<input type="text" id="doC">
+<br>
+<label> Giá trị độ F</label><p id="gTriDoF"></p>
+<button onclick="doi()">Đổi</button>
+<script>
+    function doi() {
+        let a = document.getElementById("doC").value;
+        gTriDoF = parseInt(a)*9/5+32;
+        document.getElementById('gTriDoF').innerText = gTriDoF ;
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 3</title>
+</head>
+<body>
+<input type="text" id="ma" placeholder="Nhập mã">
+<input type="text" id="loai" placeholder="Nhập loại sổ ">
+<input type="text" id="ten" placeholder="Nhập tên">
+<input type="number" id="cmnd" placeholder="Nhập cmnd">
+<input type="date" id="ngay" placeholder="Nhập ngày mở">
+<input type="number" id="tien" placeholder="Nhập số tiền">
+<input type="button" value="Thêm" onclick="themSoTietKiemMoi()">
+<p id="result"></p>
+<script>
+
+    class SoTietKiem {
+        constructor(ma, loai, ten, cmnd, ngay, tien) {
+            this.ma = ma;
+            this.ten = ten;
+            this.ngay = ngay;
+            this.tien = tien;
+            this.loai = loai;
+            this.cmnd = cmnd;
+        }
+
+        setMa(ma) {
+            this.ma = ma;
+        }
+
+        setTen(ten) {
+            this.ten = ten;
+        }
+
+        setNgay(ngay) {
+            this.ngay = ngay;
+        }
+
+        setTien(tien) {
+            this.tien = tien;
+        }
+
+        setLoai(loai) {
+            this.loai = loai;
+        }
+
+        setCmnd(cmnd) {
+            this.cmnd = cmnd;
+        }
+
+        getMa() {
+            return this.ma;
+        }
+
+        getTen() {
+            return this.ten;
+        }
+
+        getNgay() {
+            return this.ngay;
+        }
+
+        getTien() {
+            return this.tien;
+        }
+
+        getLoai() {
+            return this.loai;
+        }
+
+        getCmnd() {
+            return this.cmnd;
+        }
+
+    }
+
+
+    let danhSachSoTietKiem = [];
+
+    display(danhSachSoTietKiem);
+
+    function display(list) {
+        let tableString = '<table border="1" style="border-collapse: collapse; text-align: center">\n' +
+            '    <tr style="background-color: dimgray; height: 50px">\n' +
+            '        <th width="60px">Mã Sổ</th>\n' +
+            '        <th width="100px" >Phân Loại</th>\n' +
+            '        <th width="150px">Tên</th>\n' +
+            '        <th width="80px">Cmnd</th>\n' +
+            '        <th width="100px">Ngày mở</th>\n' +
+            '        <th width="100px">Số tiền</th>\n' +
+            '        <th width="40px">Xoá</th>\n' +
+            '        <th width="40px">Sửa lại</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < list.length; i++) {
+            tableString += '<tr style="height: 30px; background-color: antiquewhite">\n' +
+                '        <td>' + list[i].getMa() + '</td>\n' +
+                '        <td>' + list[i].getLoai() + '</td>\n' +
+                '        <td>' + list[i].getTen() + '</td>\n' +
+                '        <td>' + list[i].getCmnd() + '</td>\n' +
+                '        <td>' + list[i].getNgay() + '</td>\n' +
+                '        <td>' + list[i].getTien() + '</td>\n' +
+                '        <td><input type="button" onclick="xoaSoTietKiem(' + i + ')" value="Xoá"></td>\n' +
+                '        <td><input type="button" onclick="nhapLaiSoTietKiem(' + i + ')" value="Sửa"></td>\n' +
+                '    </tr>'
+        }
+        tableString += '</table>'
+        document.getElementById('result').innerHTML = tableString;
+    }
+
+    function xoaSoTietKiem(index) {
+        let conf = confirm("Bạn có muốn xoá sổ tiết kiệm tên : " + danhSachSoTietKiem[index].getTen());
+        if (conf) {
+            danhSachSoTietKiem.splice(index, 1);
+        } else {
+            alert("Bạn đã không xoá")
+        }
+        display(danhSachSoTietKiem);
+    }
+
+    function themSoTietKiemMoi() {
+        let ma = document.getElementById("ma").value;
+        let loai = document.getElementById("loai").value;
+        let ten = document.getElementById("ten").value;
+        let cmnd = document.getElementById("cmnd").value;
+        let ngay = document.getElementById("ngay").value;
+        let tien = document.getElementById("tien").value;
+        let soMoi = new SoTietKiem(ma, loai, ten, cmnd, ngay, tien);
+        danhSachSoTietKiem.push(soMoi);
+        display(danhSachSoTietKiem);
+        document.getElementById("ma").value = "";
+        document.getElementById("loai").value = "";
+        document.getElementById("ten").value = "";
+        document.getElementById("cmnd").value = 0;
+        document.getElementById("ngay").value = ""
+        document.getElementById("tien").value = 0;
+    }
+
+    function nhapLaiSoTietKiem(index) {
+        let maMoi = prompt("Hãy nhập mã mới ");
+        let loaiMoi = prompt("Hãy nhập loại sổ mới ");
+        let tenMoi = prompt("Hãy nhập tên mới ");
+        let cmndMoi = prompt("Hãy nhập cmnd mới ");
+        let ngayMoi = prompt("Hãy nhập ngày mở sổ mới ");
+        let tienMoi = prompt("Hãy nhập số tiền mới ");
+        danhSachSoTietKiem[index].setMa(maMoi);
+        danhSachSoTietKiem[index].setLoai(loaiMoi);
+        danhSachSoTietKiem[index].setTen(tenMoi);
+        danhSachSoTietKiem[index].setCmnd(cmndMoi);
+        danhSachSoTietKiem[index].setNgay(ngayMoi);
+        danhSachSoTietKiem[index].setTien(tienMoi);
+        display(danhSachSoTietKiem);
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Amuount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+    </tr>
+    <tr>
+        <td><input type="text" id="nhapSoTien"></td>
+        <td>
+            <select id="canChuyen">
+             <option value="vn">VietNam &nbsp&nbsp&nbsp</option>
+             <option value="usd">USD &nbsp</option>
+            </select>
+        </td>
+        <td>
+            <select id="chuyenSang">
+                <option value="usd">USD &nbsp</option>
+                <option value="vn">VietNam &nbsp</option>
+            </select>
+        </td>
+        <td>
+            <button id="nutBam">Convert </button>
+        </td>
+    </tr>
+</table>
+<p>Result :</p><p id="kQ"></p>
+<script>
+    document.getElementById('nutBam').addEventListener('click', convert);
+    function convert() {
+        let nhapSoTien = document.getElementById('nhapSoTien').value;
+        let canChuyen = document.getElementById('canChuyen').value;
+        let chuyenSang = document.getElementById('chuyenSang').value;
+        let usd = 25000;
+        let kQ;
+        if (canChuyen === 'vn'){
+            if (chuyenSang === 'vn'){
+                kQ = 'Vui lòng chọn lại'
+            } else if (chuyenSang === 'usd'){
+                kQ = parseInt(nhapSoTien)/usd;
+            }
+        }else if (canChuyen === 'usd'){
+            if (chuyenSang === 'usd'){
+                kQ = 'Vui lòng chọn lại'
+            }else if (chuyenSang === 'vn'){
+                kQ = parseInt(nhapSoTien)*usd;
+            }
+        }
+        document.getElementById('kQ').innerText = kQ;
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai1</title>
+</head>
+<body>
+<script>
+    let array = [];
+    let n = +prompt('độ dài n của mảng:');
+    for (let i = 0; i < n; i++) {
+        array[i] = +prompt('nhập phần tử mảng');
+        while (array[i] < 10 || array[i] > 100) {
+            array[i] = +prompt('nhập lại phần tử mảng');
+        }
+    }
+    console.log(array);
+    let array1 = [];
+    for (let i = 0; i < array.length; i++) {
+        let hangChuc = array[i]/10;
+        let hangDonVi = array[i]%10;
+        if (hangDonVi > hangChuc){
+            array1.push(array[i]);
+        }
+    }
+    console.log(array1);
+    alert(array1);
+</script>
+</body>
+</html>

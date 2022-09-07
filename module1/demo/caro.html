@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="display"></p>
+<script>
+
+    let arr = new Array(30);
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = new Array(30)
+        for (let j = 0; j < arr[i].length; j++) {
+            arr[i][j] = ""
+        }
+    }
+    // gọi hàm hiện thị
+    display();
+    let checkPlayer1=true;
+
+    function display() {
+        let tablString = '<table border="1">';
+        for (let i = 0; i < arr.length-4; i++) {
+            tablString += '<tr>';
+            for (let j = 0; j < arr[i].length-4; j++) {
+                tablString += '<td onclick="play(' + i + ',' + j + ')" style="width: 25px;height: 25px;">' + arr[i][j] + '</td>';
+            }
+            tablString += '</tr>';
+        }
+        tablString += '</table>';
+        document.getElementById("display").innerHTML = tablString;
+    }
+
+    function play(i, j) {
+        if (checkPlayer1&&isNotData(i,j)){
+            arr[i][j] = "X";
+            checkPlayer1=false;
+            if (checkWin()){
+                setTimeout(alert("Người chơi X chiến thắng"),5000);
+
+            }
+        }else if (!checkPlayer1&&isNotData(i,j)){
+            arr[i][j] = "O";
+            checkPlayer1=true;
+            if (checkWin()){
+                setTimeout(alert("Người chơi O chiến thắng"),5000);
+
+            }
+        }
+        display();
+    }
+    function isNotData(i,j) {
+      if (arr[i][j]==""){
+          return true;
+      }
+      alert("Ô này đã đánh rồi bạn ơi!!!")
+      return false;
+    }
+
+    function checkWin() {
+        for (let i = 0; i <arr.length ; i++) {
+            for (let j = 0; j <arr[i].length ; j++) {
+                if (arr[i][j]=="X"){
+                    if (arr[i][j+1]=="X"&&arr[i][j+2]=="X"){
+                        return true;
+                    }
+                    if (arr[i+1][j]=="X"&&arr[i+2][j]=="X"){
+                        return true;
+                    }
+                    if (arr[i+1][j+1]=="X"&&arr[i+2][j+2]=="X"){
+                        return true;
+                    }
+                    if (arr[i+1][j-1]=="X"&&arr[i+2][j-2]=="X"){
+                        return true;
+                    }
+                }
+                if (arr[i][j]=="O"){
+                            if (arr[i][j+1]=="O"&&arr[i][j+2]=="O"){
+                        return true;
+                    }
+                    if (arr[i+1][j]=="O"&&arr[i+2][j]=="O"){
+                        return true;
+                    }
+                    if (arr[i+1][j+1]=="O"&&arr[i+2][j+2]=="O"){
+                        return true;
+                    }
+                    if (arr[i+1][j-1]=="O"&&arr[i+2][j-2]=="O"){
+                        return true;
+                    }
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

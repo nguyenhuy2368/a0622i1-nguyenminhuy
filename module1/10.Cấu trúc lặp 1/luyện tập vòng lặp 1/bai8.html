@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Bài 8: Game đoán số</p>
+<input type="button" onclick="start()" value="Chơi">
+<script>
+    function start() {
+        alert("nhập khoảng mà bạn muốn đoán")
+        let min = +prompt("nhập số nhỏ")
+        let max = +prompt("nhập số lớn")
+        let random = Math.floor(Math.random() * (max - min)) + min;
+        let guess = +prompt("hãy đoán 1 con số trong khoảng bạn vừa nhập")
+        if(guess===random){
+            alert("bingo! bạn đã đoán trúng")
+        }else if(guess>random){
+            alert("hãy đoán số nhỏ hơn số bạn vừa đoán")
+        }else {
+            alert("hãy đoán số lớn hơn số bạn vừa đoán")
+        }
+    }
+</script>
+</body>
+</html>

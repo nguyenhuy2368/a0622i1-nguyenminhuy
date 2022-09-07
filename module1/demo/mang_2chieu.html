@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // khai báo và khởi tạo mảng 2 chiều 2x3
+    let arr1 =[
+        [2,3,4],
+        [5,6,7],
+        [8,9,10]
+    ];
+    // khai báo mảng 2 chiều 3X4
+    // let arr2 = new Array(3);
+    // for (let i = 0; i <arr2.length ; i++) {
+    //     arr2[i]=new Array(4);
+    // }
+    // duyệt mảng 2 chiều để thêm pt vào cho mảng
+    // sử dụng 2 vòng for lồng nhau
+    // for (let i = 0; i <arr2.length ; i++) {
+    //     for (let j = 0; j <arr2[i].length ; j++) {
+    //         arr2[i][j]= prompt("nhập vào phẩn tử thứ : " +i+"-"+j);
+    //     }
+    // }
+    // console.log(arr2);
+     // tính tổng các số lẻ trong mảng 2 chiều arr1
+    let sum =0;
+    // for (let i = 0; i <arr1.length ; i++) {
+    //     for (let j = 0; j <arr1[i].length ; j++) {
+    //         if (arr1[i][j]%2!=0){
+    //             sum+=arr1[i][j];
+    //         }
+    //     }
+    // }
+    // alert("tổng các số lẻ trong mảng 2 chiều : "+sum);
+    // tỉnh tốc các hàng chẵn và ở vị trị cột lẻ
+    for (let i = 0; i <arr1.length ; i=i+2) {
+        for (let j = 1; j <arr1[i].length ; j=j+2) {
+          sum+=arr1[i][j]
+        }
+    }
+    alert(sum);
+
+</script>
+</body>
+</html>

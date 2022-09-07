@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>_</title>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+<script>
+    class Rectangle{
+        constructor(dai,rong) {
+            this.dai = dai;
+            this.rong = rong;
+        }
+        getDienTich(){
+            return  this.dai*this.rong;
+        }
+        getChuVi(){
+            return (this.rong+this.dai)*2;
+        }
+        draw(){
+             let c = document.getElementById('myCanvas');
+             let ctx = c.getContext('2d');
+             ctx.beginPath();
+             ctx.rect(0,0,this.dai,this.rong);
+             ctx.stroke();
+         }
+    }
+    let hcn = new Rectangle(300,150);
+    hcn.draw();
+    let dienTich = hcn.getDienTich();
+    let chuVi = hcn.getChuVi();
+    alert('s: '+dienTich+' p '+chuVi);
+</script>
+</body>
+</html>

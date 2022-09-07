@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ham giai thua</title>
+</head>
+<body>
+<p>Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</p>
+<script>
+    function giaiThua(number) {
+        let x=1;
+        for (let i = 1; i <= number ; i++) {
+            x*=i;
+        }
+        return x;
+    }
+    let n = prompt('nhap so tinh giai thua');
+    alert(' giai thua cua ' + n + ' co gia tri la:  '+giaiThua(n));
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhap do dai can chuyen</label>
+<input type="text" id="lenghth">
+<label>from</label>
+<select id="from">
+    <option value="meter">meter</option>
+    <option value="feets">feet</option>
+</select>
+<label>to</label>
+<select id="to">
+    <option value="feets">feet</option>_
+    <option value="meter">meter</option>
+</select>
+<br>
+<button onclick="converter()">Chuyen</button>
+<br>
+<label>Ket qua</label>
+<p id="result"></p>
+<script>
+    function mToF(m) {
+        return m * 0.305;
+    }
+    function fToM(f) {
+        return f * 3.279;
+    }
+    function converter() {
+        let length = document.getElementById('lenghth').value;
+        let result = ;
+        let from = document.getElementById('from').value;
+        let to = document.getElementById('to').value;
+        if (from==='meter'){
+            if (to==='feets'){
+                result = mToF(length);
+            }
+        }else if (from==='feets'){
+                if (to==='meter'){
+                    result = fToM(length);
+                }
+            }
+     document.getElementById('result').innerHTML=result;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 2</title>
+</head>
+<body>
+<script>
+
+    function soSanh(a, b, x, y) {
+        if (a * y == b * x) {
+            alert('2 phân số bằng nhau');
+        } else {
+            alert('2 phân số không bằng nhau');
+        }
+    }
+
+    let tu1 = +prompt('Nhập tử số số 1');
+    let mau1 = +prompt('Nhập mẫu số số 1');
+    let tu2 = +prompt('Nhập tử số số 2');
+    let mau2 = +prompt('Nhập mẫu số số 2');
+
+    soSanh(tu1, mau1, tu2, mau2);
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Diện tích hình tròn</h2>
+<label>Nhập bán kính hình tròn</label>
+<input type="text" id="banKinh">
+<br>
+<label>Diện tích hình tròn</label>
+<p id="dienTich"></p>
+<button onclick="tinhS()">Tính</button>
+<script>
+    function tinhS() {
+        r = document.getElementById('banKinh').value;
+        dienTich = parseInt(r) * parseInt(r) * 3.14;
+        document.getElementById("dienTich").innerHTML = dienTich
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Bài 5: Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không.</p>
+<label>Chuỗi A</label>
+<input type="text" id="stringA">
+<label>Chuỗi B</label>
+<input type="text" id="stringB">
+<button onclick="check()">Kiểm tra</button>
+<script>
+    function check() {
+        a = document.getElementById('stringA').value;
+        b = document.getElementById('stringB').value;
+        if (a===b){
+            alert('giống nhau');
+        }else {
+            alert('khác');
+        }
+
+    }
+</script>
+</body>
+</html>

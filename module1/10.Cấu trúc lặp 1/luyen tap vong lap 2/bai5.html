@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.</p>
+<script>
+    let tienGoc = +prompt("Nhập số tiền bạn muốn gửi ngân hàng: ");
+    let laiSuat = +prompt("Lãi suất hằng tháng của ngân hàng bạn gửi: ");
+    laiSuat = laiSuat/100;
+    let thoiGian = +prompt("Thời gian bạn muốn gửi, tính theo tháng: ");
+    for (let i = 1; i <= thoiGian; i++) {
+        tienGoc += tienGoc*laiSuat;
+    }
+    alert("Số tiền bạn nhận được sau "+thoiGian+" tháng là: "+tienGoc.toLocaleString());
+</script>
+</body>
+</html>

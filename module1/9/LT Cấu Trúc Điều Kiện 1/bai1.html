@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label> Số a chia hết cho b không</label>
+<br>
+<label>Số a</label>
+<input type="text" id="a">
+<br>
+<label>Số b</label>
+<input type="text" id="b"><br>
+<button onclick="tinh()">Tính </button><p id="result"></p>
+<script>
+    function tinh() {
+        let a = document.getElementById("a").value;
+        let b = document.getElementById("b").value;
+        if (parseInt(a) % parseInt(b) === 0){
+           document.getElementById("result").innerHTML = "chia hết";
+        }
+        else {
+           alert("ko")
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(doC) {
+            if (doC<-273){
+                doC=-273;
+            }
+            this.doC=doC;
+        }
+        ctoF(){
+            return (this.doC*9)/5+32;
+        }
+        ctoK(){
+            return this.doC+273.15;
+        }
+    }
+    let nDoDn = new Temperature(30);
+    console.log(nDoDn.ctoF());
+    console.log(nDoDn.ctoK());
+</script>
+</body>
+</html>
