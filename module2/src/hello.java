@@ -1,5 +1,3 @@
-package ss1.bt;
-
 import java.util.Scanner;
 
 public class hello {
@@ -10,4 +8,3 @@ public class hello {
         System.out.println("hello:" + name);
     }
 }
-h
