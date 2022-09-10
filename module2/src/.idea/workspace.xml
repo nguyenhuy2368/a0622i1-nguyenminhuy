@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c74703c0-09cb-414f-a373-4305ffdd17c2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../CG-DN CaseStudy Furama Resort Module 2_v3.0_TrungDP.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Câu hỏi audit module 2 (1).xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../[A0622I1] TKB Advanced Programming in Java.xlsx" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss2/HienThiCacLoaiHinh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +38,8 @@
       <option name="presentableId" value="Default" />
       <updated>1662549804154</updated>
       <workItem from="1662549805260" duration="47000" />
+      <workItem from="1662791319964" duration="34000" />
+      <workItem from="1662791365442" duration="12000" />
     </task>
     <servers />
   </component>
@@ -46,10 +47,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="270" key="FileChooserDialogImpl" timestamp="1662549850892">
+    <state x="740" y="270" key="FileChooserDialogImpl" timestamp="1662791375887">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="740" y="270" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1662549850892" />
+    <state x="740" y="270" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1662791375887" />
     <state x="342" y="136" key="new project wizard" timestamp="1662549825528">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
