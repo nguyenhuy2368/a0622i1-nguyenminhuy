@@ -4,7 +4,7 @@ import java.lang.reflect.Array;
 import java.time.LocalTime;
 import java.util.Arrays;
 
-public class main {
+public class StopWatchTest {
     public static void main(String[] args) {
         LocalTime start = LocalTime.now();
         int [] arr = new int[1000000];
