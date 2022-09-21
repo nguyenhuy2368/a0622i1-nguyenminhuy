@@ -1,6 +1,6 @@
-package ss6_ke_thua.th.he_cac_doi_tg_hinh_hoc;
+package ss7.bt.resizeable;
 
-public class Circle extends Shape {
+public class Circle extends Shape  {
     private double radius = 1.0;
 
     public Circle() {
@@ -10,8 +10,8 @@ public class Circle extends Shape {
         this.radius = radius;
     }
 
-    public Circle(String color, boolean filled, double radius) {
-        super(color, filled);
+    public Circle(double radius, String color) {
+        super(color);
         this.radius = radius;
     }
 
@@ -22,12 +22,15 @@ public class Circle extends Shape {
     public void setRadius(double radius) {
         this.radius = radius;
     }
-    public double getArea(){
+
+    public double getArea() {
         return Math.pow(this.radius,2)*Math.PI;
     }
-    public double getPerimeter(){
-        return Math.PI*2*radius;
+
+    public double getPerimeter() {
+        return 2 * radius * Math.PI;
     }
+
     @Override
     public String toString() {
         return "A Circle with radius="
@@ -36,4 +39,8 @@ public class Circle extends Shape {
                 + super.toString();
     }
 
+    @Override
+    public double resize(double percent) {
+        return this.getArea()+percent/100*this.getArea();
+    }
 }
