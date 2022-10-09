@@ -13,6 +13,7 @@ public class Main {
             System.out.println("1.Thêm sản phẩm \t2.Sửa sp \t3.Xoá sp \t4.Hiển thị");
             System.out.println("5.Tìm sp theo tên \t6.Sắp xếp theo giá tăng dần \t7.Sắp xếp theo giá giảm dần");
             System.out.println("0.Thoát");
+            System.out.println("9.Thoát");
             System.out.println("Nhập lựa chọn của ban:  ");
             choice = scanner.nextInt();
             switch (choice) {
@@ -61,6 +62,8 @@ public class Main {
                     productManager.sortPriceDecrease();
                 case 0:
                     System.exit(0);
+                case 9:
+                    break;
             }
         } while (true);
 
