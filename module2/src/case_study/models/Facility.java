@@ -5,17 +5,17 @@ public abstract class Facility {
     private int area;
     private int price;
     private int maxPeople;
-    private String rentalType;
+    private String typeService;
 
     public Facility() {
     }
 
-    public Facility(String nameService, int area, int price, int maxPeople, String rentalType) {
+    public Facility(String nameService, int area, int price, int maxPeople, String typeService) {
         this.nameService = nameService;
         this.area = area;
         this.price = price;
         this.maxPeople = maxPeople;
-        this.rentalType = rentalType;
+        this.typeService = typeService;
     }
 
     public String getNameService() {
@@ -50,12 +50,12 @@ public abstract class Facility {
         this.maxPeople = maxPeople;
     }
 
-    public String getRentalType() {
-        return rentalType;
+    public String getTypeService() {
+        return typeService;
     }
 
-    public void setRentalType(String rentalType) {
-        this.rentalType = rentalType;
+    public void setTypeService(String typeService) {
+        this.typeService = typeService;
     }
 
     @Override
@@ -65,7 +65,7 @@ public abstract class Facility {
                 ", area=" + area +
                 ", price=" + price +
                 ", maxPeople=" + maxPeople +
-                ", rentalType='" + rentalType + '\'' +
+                ", typeService='" + typeService + '\'' +
                 '}';
     }
 }
