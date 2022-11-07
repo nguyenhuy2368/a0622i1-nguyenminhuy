@@ -1,0 +1,6 @@
+001,ip11,apple,100000,đen
+002,ip12,apple,100000,đen1
+003,ip13,apple,100000,đen2
+004,ip14,apple,100000,đen3
+005,ip15,apple,100000,đen4
+006,ip16,apple,100000,đen5
