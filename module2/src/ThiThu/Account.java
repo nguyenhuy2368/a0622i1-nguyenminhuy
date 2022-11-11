@@ -1,32 +1,26 @@
 package ThiThu;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Account {
+public abstract class Account {
     private String cccd;
     private String hoTen;
     private Date ngaySinh;
     private int gioiTinh;
     private boolean trangThai = false;
+    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
     public Account() {
     }
 
-    public Account(String cccd, String hoTen, Date ngáyinh, int gioiTinh, boolean trangThai) {
+    public Account(String cccd, String hoTen, Date ngaySinh, int gioiTinh, boolean trangThai) {
         this.cccd = cccd;
         this.hoTen = hoTen;
-        this.ngaySinh = ngáyinh;
+        this.ngaySinh = ngaySinh;
         this.gioiTinh = gioiTinh;
         this.trangThai = trangThai;
     }
-
-    public Account(String line) {
-    }
-
-//    public Account(String str) {
-//        String[] data = str.split(",");
-//        this.
-//    }
 
 
     public String getCccd() {
@@ -68,7 +62,22 @@ public class Account {
     public void setTrangThai(boolean trangThai) {
         this.trangThai = trangThai;
     }
-    public String getInfor (){
-        return this.cccd+","+this.hoTen+","+this.ngaySinh+","+this.gioiTinh+","+this.trangThai;
+
+    public String getData() {
+        String date = dateFormat.format(this.ngaySinh);
+        return this.cccd + "," + this.hoTen + "," + this.ngaySinh + "," + this.gioiTinh + "," + this.trangThai;
+    }
+
+    public abstract String getInfor();
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "cccd='" + cccd + '\'' +
+                ", hoTen='" + hoTen + '\'' +
+                ", ngaySinh=" + ngaySinh +
+                ", gioiTinh=" + gioiTinh +
+                ", trangThai=" + trangThai +
+                '}';
     }
 }

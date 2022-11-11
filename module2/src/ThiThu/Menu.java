@@ -8,12 +8,16 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
-    static List<AccountLessor> lessorList = new ArrayList<>();
     private static Scanner sc = new Scanner(System.in);
+    public static AccountLessorService accountLessorService = new AccountLessorService();
+    public static AccRenSer accRenSer = new AccRenSer();
 
-    public static void main(String[] args) {  displayMenu();  }
-    public static void displayMenu(){
-        int choice;
+    public static void main(String[] args) throws Exception {
+        displayMenu();
+    }
+
+    public static void displayMenu() throws Exception {
+        int choice = 0;
         System.out.println("1. Chức năng đăng ký người thuê/cho thuê nhà\n" +
                 "2. Hiển thị thông tin người thuê/cho thuê nhà\n" +
                 "3. Tìm kiếm người cho thuê phù hợp theo CCCD của người thuê\n" +
@@ -23,87 +27,140 @@ public class Menu {
                 "7. Thoát\n");
         System.out.println("Nhập lựa chọn của bạn");
         do {
-            choice =sc.nextInt();
-            switch (choice){
+            try {
+                choice = Integer.parseInt(sc.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("bạn đã nhập sai định dạng");
+            }
+            switch (choice) {
                 case 1:
-                    addNewAccLessor();
+                    displayDangKy();
+                    displayMenu();
                     break;
                 case 2:
+                    hienThi();
+                    displayMenu();
                     break;
                 case 3:
+                    timKiem();
+                    displayMenu();
                     break;
                 case 4:
+                    xoa();
+                    displayMenu();
                     break;
                 case 5:
+                    ghiFile();
+                    displayMenu();
                     break;
                 case 6:
+                    hienThi();
+                    displayMenu();
                     break;
                 case 7:
-                    break;
+                    System.exit(0);
+                default:
+                    System.out.println("vui longf chọn 1-7");
             }
 
-        }while (true);
+        }while (choice<1 ||choice>7);
+    }
 
-    }
-    public static void addNewAccLessor(){
-        System.out.println("Nhập cccd");
-        String cccd = sc.nextLine();
-        System.out.println("Nhập họ và tên");
-        String hoVaTen = sc.nextLine();
-        System.out.println("Nhập ngày sinh");
-        Date ngaySinh = new Date(sc.nextLine());
-        System.out.println("Nhập giới tính");
-        int gioiTinh;
+    public static void displayDangKy() throws Exception {
+        System.out.println("Menu Đăng ky");
+        System.out.println("1.Dăng ký người cho thuê");
+        System.out.println("2.Dăng ký người thuê");
+        System.out.println("3.Về menu chính");
+        int choice=0;
         do {
-            System.out.println("Nhập giới tính");
-            gioiTinh = Integer.parseInt(sc.nextLine());
-        }while (gioiTinh<-1 || gioiTinh >0);
-        String gioTinh ="";
-        switch (gioiTinh){
-            case 1 :
-                gioTinh = "Nam";
-                break;
-            case 0:
-                gioTinh = "Nữ";
-                break;
-        }
-        System.out.println("nhập diện tích");
-        float dienTich = Float.parseFloat(sc.nextLine());
-        System.out.println("Nhập địa chỉ");
-        String diaChi = sc.nextLine();
-        System.out.println("nhập số người ở tối đa");
-        int soNguoi = Integer.parseInt(sc.nextLine());
-        System.out.println("Nhập giá tiền");
-        int giaTien=Integer.parseInt(sc.nextLine());
-        AccountLessor accountLessor = new AccountLessor(cccd,hoVaTen,ngaySinh,gioiTinh,false,dienTich,diaChi,soNguoi,giaTien  );
-        lessorList.add(accountLessor);
+            try {
+                System.out.println("Mời chọn chức năng");
+                choice = Integer.parseInt(sc.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("bạn đã nhập sai định dạng");
+            }
+            switch (choice){
+                case 1:
+                    accountLessorService.add();
+                    displayDangKy();
+                    break;
+                case 2:
+                    accRenSer.add();
+                    displayDangKy();
+                    break;
+                case 3:
+                    displayMenu();
+                    break;
+                default:
+                    System.out.println("vui lòng chọn 1 hoặc 2 hoăc 3");
+            }
+        }while (choice<1 && choice>3);
     }
-    public static void addNewAccRenter(){
-        System.out.println("nhập cccd");
-        String cccd = sc.nextLine();
-        System.out.println("Nhập họ và tên");
-        String hoVaTen = sc.nextLine();
-        System.out.println("Nhập ngày sinh");
-        Date ngaySinh = new Date(sc.nextLine());
-        System.out.println("Nhập giới tính");
-        int gioiTinh;
+    public static void hienThi() throws Exception {
+        System.out.println("Menu hiển thị");
+        System.out.println("1.Hiển thị danh sách người cho thuê");
+        System.out.println("2.Hiển thị danh sách người thuê");
+        System.out.println("3.Về menu chính");
+        int choice=0;
         do {
-            System.out.println("Nhập giới tính");
-            gioiTinh = Integer.parseInt(sc.nextLine());
-        }while (gioiTinh<-1 || gioiTinh >0);
-        String gioTinh ="";
-        switch (gioiTinh){
-            case 1 :
-                gioTinh = "Nam";
-                break;
-            case 0:
-                gioTinh = "Nữ";
-                break;
-        }
-        System.out.println("nhập diện tích nhỏ nhất cần thuê");
-        float minDienTich = Float.parseFloat(sc.nextLine());
-        System.out.println("nhập diện tích lớn nhất cần thuê");
-        float maxDienTich = Float.parseFloat(sc.nextLine());
-        
+            try {
+                System.out.println("Mời chọn chức năng");
+                choice = Integer.parseInt(sc.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("bạn đã nhập sai định dạng");
+            }
+            switch (choice){
+                case 1:
+                    accountLessorService.display();
+                    hienThi();
+                    break;
+                case 2:
+                    accRenSer.display();
+                    hienThi();
+                    break;
+                case 3:
+                    displayMenu();
+                    break;
+                default:
+                    System.out.println("vui lòng chọn 1 hoặc 2");
+            }
+        }while (choice<1&&choice>3);
+    }
+    public static void timKiem(){
+        accountLessorService.timkiem();
+    }
+    public static void xoa() throws Exception {
+        accountLessorService.delete();
+        displayMenu();
+    }
+    public static void ghiFile() throws Exception {
+        System.out.println("Menu ghi file");
+        System.out.println("1.Ghi file accountLessor");
+        System.out.println("2.Ghi file accountRentter");
+        System.out.println("3.Về menu chính");
+        int choice=0;
+        do {
+            try {
+                System.out.println("Mời chọn chức năng");
+                choice = Integer.parseInt(sc.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("bạn đã nhập sai định dạng");
+            }
+            switch (choice){
+                case 1:
+                    accountLessorService.writeFile();
+                    ghiFile();
+                    break;
+                case 2:
+                    accRenSer.writeFile();
+                    ghiFile();
+                    break;
+                case 3:
+                    displayMenu();
+                    break;
+                default:
+                    System.out.println("vui lòng chọn 1 hoặc 2");
+            }
+        }while (choice<1 && choice>3);
     }
 }

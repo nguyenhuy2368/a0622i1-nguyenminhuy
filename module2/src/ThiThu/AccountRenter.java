@@ -1,5 +1,7 @@
 package ThiThu;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class AccountRenter extends Account {
@@ -7,6 +9,7 @@ public class AccountRenter extends Account {
     private float maxDienTich;
     private int minGiaTien;
     private int maxGiaTien;
+    public static SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
     public AccountRenter() {
     }
@@ -19,6 +22,24 @@ public class AccountRenter extends Account {
         this.maxGiaTien = maxGiaTien;
     }
 
+    public AccountRenter(String str) throws ParseException {
+        String[] strings = str.split(",");
+        setCccd(strings[0]);
+        setHoTen(strings[1]);
+        Date date = dateFormat.parse(strings[2]);
+        setNgaySinh(date);
+        setGioiTinh(Integer.parseInt(strings[3]));
+        if(strings[4]=="false"){
+            setTrangThai(false);
+        }else {
+            setTrangThai(true);
+        }
+        this.maxDienTich = Float.parseFloat(strings[5]);
+        this.minDienTich = Float.parseFloat(strings[6]);
+        this.maxGiaTien = Integer.parseInt(strings[7]);
+        this.minGiaTien = Integer.parseInt(strings[8]);
+
+    }
     public float getMinDienTich() {
         return minDienTich;
     }
@@ -50,5 +71,19 @@ public class AccountRenter extends Account {
     public void setMaxGiaTien(int maxGiaTien) {
         this.maxGiaTien = maxGiaTien;
     }
-    public String getInfor(){return this.maxDienTich+","+this.minDienTich+","+this.maxGiaTien+","+this.minGiaTien;}
+
+    @Override
+    public String getInfor() {
+        return super.getData()+","+this.minDienTich+","+this.maxDienTich+","+this.minGiaTien+","+this.maxGiaTien;
+    }
+
+    @Override
+    public String toString() {
+        return "AccountRenter{" +
+                "minDienTich=" + minDienTich +
+                ", maxDienTich=" + maxDienTich +
+                ", minGiaTien=" + minGiaTien +
+                ", maxGiaTien=" + maxGiaTien +
+                '}';
+    }
 }
