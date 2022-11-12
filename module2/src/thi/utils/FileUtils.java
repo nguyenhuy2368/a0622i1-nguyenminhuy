@@ -9,32 +9,44 @@ import java.util.List;
 
 public class FileUtils {
     public static void writeBrandMobile(BrandMobile brandMobile) {
-        File file = new File("D:\\A0622I1\\module2\\src\\thi\\data\\brandmobiles.csv");
+        File file = new File("D:\\A0622I1\\module2\\src\\thi\\datas\\brandmobiles.csv");
         BufferedWriter bufferedWriter = null;
         try {
             FileWriter fileWriter = new FileWriter(file, true);
             bufferedWriter = new BufferedWriter(fileWriter);
             bufferedWriter.write(brandMobile.getId() + "," + brandMobile.getName() + "," + brandMobile.getPrice() + "," + brandMobile.getQuantity() + "," + brandMobile.getBrand() + "," + brandMobile.getTimeGuarantee() + "," + brandMobile.getRangeGuarante() + "\n");
-            bufferedWriter.flush();
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                bufferedWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
-    public static int getIdLastBrandMobile() {
-        List<BrandMobile> brandMobileList;
-        brandMobileList = getListBrandMobile();
-        int lastIndex = brandMobileList.size() - 1;
-        if (brandMobileList.size() == 0) {
-            return 0;
-        } else {
-            return brandMobileList.get(lastIndex).getId();
+    public static void writeSecondMobile(SecondMobile secondMobile) {
+        File file = new File("D:\\A0622I1\\module2\\src\\thi\\datas\\secondmobiles.csv");
+        BufferedWriter bufferedWriter = null;
+        try {
+            FileWriter fileWriter = new FileWriter(file, true);
+            bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write(secondMobile.getId() + "," + secondMobile.getName() + "," + secondMobile.getPrice() + "," + secondMobile.getQuantity() + "," + secondMobile.getBrand() + "," + secondMobile.getFromNation() + "," + secondMobile.getStatus() + "\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                bufferedWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     public static List<BrandMobile> getListBrandMobile() {
         List<BrandMobile> brandMobileList = new ArrayList<>();
-        File file = new File("src\\thi\\datas\\brandmobiles.csv");
+        File file = new File("D:\\A0622I1\\module2\\src\\thi\\datas\\brandmobiles.csv");
         BufferedReader bufferedReader = null;
         String line;
         BrandMobile brandMobile;
@@ -50,6 +62,12 @@ public class FileUtils {
 
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                bufferedReader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return brandMobileList;
     }
@@ -57,9 +75,19 @@ public class FileUtils {
     public static void readBrandMobile() {
         List<BrandMobile> brandMobileList;
         brandMobileList = getListBrandMobile();
-        System.out.println("---Danh sach dien thoai chinh hang---");
         for (BrandMobile element : brandMobileList) {
             element.showInfor();
+        }
+    }
+
+    public static int getIdLastBrandMobile() {
+        List<BrandMobile> brandMobileList;
+        brandMobileList = getListBrandMobile();
+        int lastIndex = brandMobileList.size() - 1;
+        if (brandMobileList.size() == 0) {
+            return 0;
+        } else {
+            return brandMobileList.get(lastIndex).getId();
         }
     }
 
@@ -73,7 +101,7 @@ public class FileUtils {
             }
         }
         if (foundList.size() == 0) {
-            System.out.println("Khong tim thay dien thoai!!!!");
+            System.out.println("Khong tim thay");
         } else {
             for (BrandMobile element : foundList) {
                 element.showInfor();
@@ -81,38 +109,10 @@ public class FileUtils {
         }
 
     }
-    public static void writeSecondMobile(SecondMobile secondMobile) {
-        File file = new File("src\\thi\\datas\\secondmobiles.csv");
-        BufferedWriter bufferedWriter = null;
-        try {
-            FileWriter fileWriter = new FileWriter(file, true);
-            bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write(secondMobile.getId() + "," + secondMobile.getName() + "," + secondMobile.getPrice() + "," + secondMobile.getQuantity() + "," + secondMobile.getBrand() + "," + secondMobile.getFromNation() + "," + secondMobile.getStatus() + "\n");
-            bufferedWriter.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                bufferedWriter.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-    public static int getIdLastSecondMobile() {
-        List<SecondMobile> secondMobileList;
-        secondMobileList = getListSecondMobile();
-        int lastIndex = secondMobileList.size() - 1;
-        if (secondMobileList.size() == 0) {
-            return 0;
-        } else {
-            return secondMobileList.get(lastIndex).getId();
-        }
-    }
 
     public static List<SecondMobile> getListSecondMobile() {
         List<SecondMobile> secondMobileList = new ArrayList<>();
-        File file = new File("D:\\A0622I1\\module2\\src\\thi\\data\\secondmobiles.csv");
+        File file = new File("D:\\A0622I1\\module2\\src\\thi\\datas\\secondmobiles.csv");
         BufferedReader bufferedReader = null;
         String line;
         SecondMobile secondMobile;
@@ -142,9 +142,19 @@ public class FileUtils {
     public static void readSecondMobile() {
         List<SecondMobile> secondMobileList;
         secondMobileList = getListSecondMobile();
-        System.out.println("---Danh sach dien thoai xach tay---");
         for (SecondMobile element : secondMobileList) {
             element.showInfor();
+        }
+    }
+
+    public static int getIdLastSecondMobile() {
+        List<SecondMobile> secondMobileList;
+        secondMobileList = getListSecondMobile();
+        int lastIndex = secondMobileList.size() - 1;
+        if (secondMobileList.size() == 0) {
+            return 0;
+        } else {
+            return secondMobileList.get(lastIndex).getId();
         }
     }
 
@@ -158,7 +168,7 @@ public class FileUtils {
             }
         }
         if (foundSecondMobileList.size() == 0) {
-            System.out.println("Khong tim thay dien thoai!!!!");
+            System.out.println("Khong tim thay");
         } else {
             for (SecondMobile element : foundSecondMobileList) {
                 element.showInfor();
@@ -175,7 +185,7 @@ public class FileUtils {
                 brandMobileList.remove(i);
             }
         }
-        File file = new File("D:\\A0622I1\\module2\\src\\thi\\data\\brandmobiles.csv");
+        File file = new File("D:\\A0622I1\\module2\\src\\thi\\datas\\brandmobiles.csv");
         BufferedWriter bufferedWriter = null;
         try {
             FileWriter fileWriter = new FileWriter(file);
@@ -204,7 +214,7 @@ public class FileUtils {
                 secondMobileList.remove(i);
             }
         }
-        File file = new File("D:\\A0622I1\\module2\\src\\thi\\data\\secondmobiles.csv");
+        File file = new File("D:\\A0622I1\\module2\\src\\thi\\datas\\secondmobiles.csv");
         BufferedWriter bufferedWriter = null;
         try {
             FileWriter fileWriter = new FileWriter(file);
