@@ -2,8 +2,8 @@ create database ss2_qlbh;
 use ss2_qlbh;
 create table Customer(
 cID int auto_increment primary key,
-CName varchar(50),
-CAge int
+cName varchar(50),
+cAge int
 );
 create table `Order`(
 oID int auto_increment primary key,
@@ -20,6 +20,8 @@ pPrice int
 create table OderDetail(
 oID int,
 pID int,
-odQTY int
-
+odQTY int,
+primary key (oID,pID),
+foreign key(oID) references `Order`(oID),
+foreign key(pID) references Product(pID)
 );
