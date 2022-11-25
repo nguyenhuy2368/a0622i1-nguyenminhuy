@@ -9,11 +9,11 @@ create table `Order`(
 oID int auto_increment primary key,
 cID int,
 oDate date,
-OTotalPrice int,
-foreign key(oID) references Customer(cID)
+oTotalPrice int,
+foreign key(cID) references Customer(cID)
 );
 create table Product (
-pID int primary key,
+pID int auto_increment primary key,
 pName varchar(50),
 pPrice int
 );
