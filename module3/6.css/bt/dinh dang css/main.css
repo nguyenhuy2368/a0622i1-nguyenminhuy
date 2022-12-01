@@ -1,0 +1,17 @@
+body{
+    width: 70%;
+    margin:auto;
+}
+.heading{
+    border-bottom: darkgray 1px solid;
+
+}
+h1{
+    margin: 0px;
+}
+.content{
+    text-indent: 50px;
+}
+a{
+    text-decoration: none;
+}
