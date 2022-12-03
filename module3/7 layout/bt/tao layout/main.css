@@ -1,0 +1,29 @@
+header, footer {
+    background-color: black;
+    color: red;
+    padding: 20px;
+}
+body{
+    font-family: "Arial Narrow" ;
+    font-size: 0.9em;
+}
+section {
+    margin: 5px;
+    padding: 10px;
+    background-color: lightgrey;
+}
+
+article {
+    margin: 5px;
+    padding: 10px;
+    background-color: white;
+}
+
+nav ul {
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 5px;
+}

@@ -1,0 +1,35 @@
+.header{
+    display: flex;
+}
+.header img {
+    width: 50px;
+    height: 50px;
+}
+.logosearch{
+    display: flex;
+}
+.logo{
+    padding: 0px 10px;
+}
+ul{
+    display: flex;
+}
+a{
+    padding: 0 20px;
+}
+.search{
+    padding-top: 20px;
+    padding-left: 10px;
+    border-radius: 50px;
+}
+.search input{
+    height: 30px;
+    width: 300px;
+}
+#section{
+    display: flex;
+    justify-content: space-around;
+}
+#section ul{
+    display: block;
+}
