@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f07f0fed-5f23-4d7f-994f-ff28022a4a1b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/7 layout/bt/facebook/fb.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/7 layout/bt/facebook/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/7 layout/bt/tao layout/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/7 layout/bt/tao layout/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11.mvc/bt/ql_sp/src/main/java/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11.mvc/bt/ql_sp/src/main/java/service/IProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11.mvc/bt/ql_sp/src/main/java/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/8.bootstrap/bt/gallery/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/8.bootstrap/bt/landing page/landing_page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/8.bootstrap/th/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/8.bootstrap/th/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/A0622G1/.idea/C0722g1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/demo_jsp_servlet/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/7 layout/bt/web hoat hinh/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/7 layout/bt/web hoat hinh/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/7 layout/bt/web hoat hinh/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/7 layout/bt/web hoat hinh/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -22,10 +57,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/7 layout" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Clone/A1120I1-TranThanhPhuong/Module3/8. Bootstrap/Bai tap/Gallery/index.html" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -38,16 +76,36 @@
       <option name="presentableId" value="Default" />
       <updated>1669988390270</updated>
       <workItem from="1669988391392" duration="20000" />
+      <workItem from="1670244949271" duration="3125000" />
+      <workItem from="1670333738491" duration="128000" />
+      <workItem from="1670342168191" duration="57000" />
+      <workItem from="1670345555649" duration="45000" />
+      <workItem from="1670415681191" duration="7215000" />
+      <workItem from="1670428965856" duration="1306000" />
+      <workItem from="1670590399896" duration="2000" />
+      <workItem from="1671352236177" duration="199000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1669988410484">
+    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1670416198173">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="740" y="271" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1669988410484" />
+    <state x="740" y="271" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1670416198173" />
   </component>
 </project>

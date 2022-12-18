@@ -3,7 +3,7 @@ body{
     margin: auto;
     font-size: 20px;
 }
-#menu nav {
+#menu ul {
     background-color: darkgrey;
     display: flex;
     list-style-type: none;
@@ -23,6 +23,9 @@ div {
 }
 #header {
     background-color: darkgrey;
+}
+#footer p{
+    text-align: center;
 }
 @media only screen and (max-width:740px ){
     .col-s-1 {width: 8.33333%;}
@@ -82,10 +85,10 @@ div {
     .col-l-11 {width: 91.66667%;}
     .col-l-12 {width: 100%;}
 }
-.left {
+#left {
     width: 28%;
 }
 
-.right {
+#right {
     width: 68%;
 }
