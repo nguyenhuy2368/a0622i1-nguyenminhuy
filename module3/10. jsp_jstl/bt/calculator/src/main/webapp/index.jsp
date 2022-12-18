@@ -11,13 +11,32 @@
     <title>$Title$</title>
 </head>
 <body>
-<form action="/calculate" method="post">
+<form method="post" action="/calculate">
   <fieldset>
     <legend>Calculator</legend>
     <table>
       <tr>
-        <td>First Operand : </td>
-        <td><input type="text" name="first_operand"></td>
+        <td>First operand: </td>
+        <td><input name="first-operand" type="text"/></td>
+      </tr>
+      <tr>
+        <td>Operator: </td>
+        <td>
+          <select name="operator">
+            <option value="+">Addition</option>
+            <option value="-">Subtraction</option>
+            <option value="*">Multiplication</option>
+            <option value="/">Division</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Second operand: </td>
+        <td><input name="second-operand" type="text"/></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" value="Calculate"/></td>
       </tr>
     </table>
   </fieldset>
