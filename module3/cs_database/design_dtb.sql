@@ -6,7 +6,7 @@ create table vitri(
 );
 create table trinhdo(
 	idTrinhDo int primary key,
-    trinhDo varchar(45)
+    tenTrinhDo varchar(45)
 );
 create table bophan(
 	idBoPhan int primary key,
