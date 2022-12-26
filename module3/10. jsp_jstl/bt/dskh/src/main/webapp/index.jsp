@@ -13,6 +13,6 @@
     <title>$Title$</title>
 </head>
 <body>
-<c:redirect url="/customer.jsp"></c:redirect>
+<c:redirect url="/customer"></c:redirect>
 </body>
 </html>

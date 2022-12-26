@@ -33,4 +33,14 @@ public class UserService implements IUserService {
     public void remove(int id) {
         repository.remove(id);
     }
+
+    @Override
+    public List<User> findByCountry(String country) {
+        return repository.findByCountry(country);
+    }
+
+    @Override
+    public List<User> sortName() {
+        return repository.sortName();
+    }
 }

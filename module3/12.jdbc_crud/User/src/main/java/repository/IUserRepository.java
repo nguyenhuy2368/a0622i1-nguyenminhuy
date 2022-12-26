@@ -10,4 +10,7 @@ public interface IUserRepository {
     User findById(int id);
     void update(int id, User user);
     void remove(int id);
+    List<User> findByCountry(String country);
+
+    List<User> sortName();
 }
