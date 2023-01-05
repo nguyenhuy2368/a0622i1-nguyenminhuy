@@ -17,7 +17,7 @@
     <p><a href="user?action=create">Create new User</a></p>
     <p><a href="user?action=findCountry">Find User country</a></p>
     <p><a href="user?action=sortName">List sort name</a></p>
-    <form method="post">
+    <form method="post" action="/user">
         <table border="1">
             <tr>
                 <th>ID</th>
@@ -27,12 +27,12 @@
                 <th>Action</th>
                 <th>Action</th>
             </tr>
-            <c:forEach items="${list}" var="user">
+            <c:forEach items="${listFinal}" var="user" >
                 <tr>
-                    <td>${user.id}</td>
-                    <td>${user.name}</td>
-                    <td>${user.email}</td>
-                    <td>${user.country}</td>
+                    <td>${user.getId()}</td>
+                    <td>${user.getName()}</td>
+                    <td>${user.getEmail()}</td>
+                    <td>${user.getCountry()}</td>
                     <td><a href="user?action=edit&id=${user.getId()}">Edit</a></td>
                     <td><a href="user?action=delete&id=${user.getId()}">Delete</a></td>
                 </tr>

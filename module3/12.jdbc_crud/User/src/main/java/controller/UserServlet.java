@@ -87,8 +87,9 @@ public class UserServlet extends HttpServlet {
     }
     private void showUserList(HttpServletRequest request, HttpServletResponse response){
         List<User> list = new ArrayList<>();
-        request.setAttribute("list",list);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/user/list.jsp");
+        list = service.selectAllUser();
+        request.setAttribute("listFinal",list);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("user/list.jsp");
         try {
             requestDispatcher.forward(request,response);
         } catch (ServletException e) {
@@ -150,7 +151,7 @@ public class UserServlet extends HttpServlet {
     private void findCountry(HttpServletRequest request, HttpServletResponse response){
         String country = request.getParameter("country");
         List<User> list = service.findByCountry(country);
-        request.setAttribute("list", list);
+        request.setAttribute("listFinal", list);
         RequestDispatcher dispatcher = request.getRequestDispatcher("user/findCountry.jsp");
         try {
             dispatcher.forward(request,response);
@@ -162,7 +163,7 @@ public class UserServlet extends HttpServlet {
     }
     private void showListSortName(HttpServletRequest request, HttpServletResponse response){
         List<User> list = service.sortName();
-        request.setAttribute("list", list);
+        request.setAttribute("listFinal", list);
         RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
         try {
             dispatcher.forward(request,response);

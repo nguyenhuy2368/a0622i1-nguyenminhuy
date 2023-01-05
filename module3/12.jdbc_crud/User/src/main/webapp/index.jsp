@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%--
   Created by IntelliJ IDEA.
@@ -12,6 +13,6 @@
     <title></title>
 </head>
 <body>
-
+<c:redirect url="/user"></c:redirect>
 </body>
 </html>

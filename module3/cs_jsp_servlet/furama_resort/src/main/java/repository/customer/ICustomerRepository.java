@@ -1,0 +1,13 @@
+package repository.customer;
+
+import model.customer.Customer;
+
+import java.util.List;
+
+public interface ICustomerRepository {
+    List<Customer> selectAllCustomer();
+    void save(Customer customer);
+    void update(int id, Customer customer);
+    void delete(int id);
+    List<Customer> getCustomerByName(String name);
+}
