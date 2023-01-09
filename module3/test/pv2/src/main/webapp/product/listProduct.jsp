@@ -12,78 +12,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>View All</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="boostrap/css/bootstrap.css">
-    <link rel="stylesheet" href="boostrap/css/mainStyle.css">
+    <link rel="stylesheet" href="/bootstrap520/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/datatables/css/dataTables.bootstrap5.min.css">
+    <style>
+        .content_table{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<form>
-    <input type="text" name="searchName">
-    <input type="hidden" name="action" value="search">
-    <button>Search</button>
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-auto">
+            <form>
+                <input type="text" name="searchName" placeholder="searchname">
+                <input type="hidden" name="action" value="search">
+                <button class="btn btn-info">Search</button>
+                <p></p>
+                <a class="btn btn-outline-secondary" href="/testModule3?action=add">Create New Product</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="content_table"></div>
 <form action="/testModule3" >
-    <table class="table table-hover">
-        <tr>
-            <td colspan="9"><a href="/testModule3?action=add">Create New Product</a></td>
-        </tr>
-        <tr>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 style="color: darkred;padding-bottom: 20px">List product</h3>
+                <table id="tableStudent" class="table table-striped table-bordered" style="width:100%">
+                    <thead>
+                    <tr>
+                        <th>ProductID</th>
+                        <th>ProductName</th>
+                        <th>ProductPrice</th>
+                        <th>ProductQuantity</th>
+                        <th>ProductColor</th>
+                        <th>ProductDescription</th>
+                        <th>ProductCategoryID</th>
+                        <th colspan="2">Functions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${products}" var="product">
+                        <tr>
+                            <td>${product.getProductId()}</td>
+                            <td>${product.getProductName()}</td>
+                            <td>${product.getProductPrice()}</td>
+                            <td>${product.getProductQuantity()}</td>
+                            <td>${product.getColor()}</td>
+                            <td>${product.getProductDescription()}</td>
+                            <td>${product.getCategoryId()}</td>
+                            <td><a class="btn btn-secondary" href="/testModule3?action=update&productId=${product.getProductId()}">Update</a></td>
+                            <td>
+                                <a class="btn btn-danger" href="/testModule3?action=delete&productId=${product.getProductId()}">Delete</a>
 
-            <td colspan="9">
-
-            </td>
-
-        </tr>
-        <tr>
-            <td>
-                ProductID
-            </td>
-            <td>
-                ProductName
-            </td>
-            <td>
-                ProductPrice
-            </td>
-            <td>
-                ProductQuantity
-            </td>
-            <td>
-                ProductColor
-            </td>
-            <td>
-                ProductDescription
-            </td>
-            <td>
-                ProductCategoryID
-            </td>
-            <td colspan="2">Functions</td>
-        </tr>
-        <c:forEach items="${products}" var="product">
-            <tr>
-                <td>${product.getProductId()}</td>
-                <td>${product.getProductName()}</td>
-                <td>${product.getProductPrice()}</td>
-                <td>${product.getProductQuantity()}</td>
-                <td>${product.getColor()}</td>
-                <td>${product.getProductDescription()}</td>
-                <td>${product.getCategoryId()}</td>
-                <td><a href="/testModule3?action=update&productId=${product.getProductId()}">Update</a></td>
-                <td><a href="/testModule3?action=delete&productId=${product.getProductId()}">Delete</a></td>
-            </tr>
-        </c:forEach>
-    </table>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </form>
+<script src="/jquery/jquery-3.5.1.min.js"></script>
+<script src="/datatables/js/jquery.dataTables.min.js"></script>
+<script src="/datatables/js/dataTables.bootstrap5.min.js"></script>
+
+<script src="/bootstrap520/js/bootstrap.bundle.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#tableStudent').dataTable( {
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 5
+        } );
+    } );
+</script>
 </body>
 </html>
