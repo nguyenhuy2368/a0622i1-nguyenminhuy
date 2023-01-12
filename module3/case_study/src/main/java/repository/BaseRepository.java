@@ -8,7 +8,7 @@ public class BaseRepository {
     private static final String URL ="jdbc:mysql://localhost:3306/c0822g1_student"; // sửa lại tên của csdl
     private static final String USER ="root";// mặc định của mysql
     private static final String PASS ="codegym";// do cài đặt khi cài đặt mysql
-    public static Connection getConnectDB(){
+    public static Connection getConnect(){
         Connection connection = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -19,5 +19,16 @@ public class BaseRepository {
             throwables.printStackTrace();
         }
         return connection;
+    }
+    public static Connection connection;
+    public static void close(){
+        try {
+            if (connection!=null){
+                connection.close();
+            }
+        } catch (SQLException e) {
+
+            e.getMessage();
+        }
     }
 }

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/bootstrap520/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/datatables/css/dataTables.bootstrap5.min.css">
 </head>
+<body>
 <div class="content_table">
     <div class="container">
         <div class="row col-lg-12">

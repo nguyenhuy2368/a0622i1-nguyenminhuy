@@ -70,7 +70,7 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void deleteProduct(HttpServletRequest request, HttpServletResponse response) {
-        int productId = Integer.parseInt(request.getParameter("productId"));
+        int productId = Integer.parseInt(request.getParameter("id"));
         productDAO.deleteById(productId);
         List<Product> list = productDAO.findAll();
         request.setAttribute("products", list);
