@@ -1,0 +1,22 @@
+- Back-end: (Đọc kỹ jwt)
+1. Đâu tiên phải xem cách mã hóa password 
+		Link mả hóa online 1 chiều (text -> password): https://bcrypt-generator.com/
+2. Hiểu được luồng đăng nhập của java security sử dụng jwt (json web token)
+		JWT là gì? Quan trọng nhé, tìm hiểu kỹ chút
+3. Sử dụng jwt để đăng nhập (xác thực) và phân quyền (Demo 2 quyền ROLE_USER và ROLE_ADMIN trước)
+4. Không code chức năng remember-me ở phía back-end 
+(cái này để front-end làm. Có note ở dưới)
+
+- Front-end: (Nên làm 1 trang đăng nhập chung cho nhiều role để học cách phân quyền và điều hướng trang)
+
+1. Front-end sử lý phần remember-me (Sử dụng cookie hoặc localStorage)
+	Link tài liệu :https://viblo.asia/p/su-khac-biet-giua-localstorage-sessionstorage-va-cookie-m68Z0Q7jlkG
+	Nên sử dụng local-storage và session-storage
+2. TÌm hiểu cách gán jwt khi gọi api (Trước tiên gán API thủ công nghĩa là từng code cho từng API,
+xong tìm hiểu cách gán tự động khi call all API)
+3. Xác thực (Mã lỗi 401)
+4. Phân quyền (Mã lỗi 403): Xác định role và điều hướng về trang cho role đó
+
+
+Link github: https://github.com/trungtrong2010/spring-security
+** Serach in youtube with key work: 
