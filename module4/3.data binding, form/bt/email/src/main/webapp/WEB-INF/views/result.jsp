@@ -15,7 +15,7 @@
 <table>
     <tr>
         <td>Languages: </td>
-        <td>${setting.language}</td>
+        <td>${setting.languages}</td>
     </tr>
     <tr>
         <td>Page size: </td>
