@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Danh sách sản phẩm</h2>
+<form action="#" method="get">
+    <input type="text" name="search" placeholder="nhập tên cần tiềm">
+    <input type="submit" value="search">
+</form>
+<p>
+    <a th:href="@{/music/create}">Thêm mới</a>
+</p>
+<table border="1">
+    <tr>
+        <th>STT</th>
+        <th>ID</th>
+        <th>NAME MUSIC</th>
+        <th>ARTIST</th>
+        <th>CATEGORY</th>
+        <th>LINK</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+    </tr>
+    <tr th:each="music,row :${musicList}">
+        <td th:text="${row.count}"></td>
+        <td th:text="${music.id}"></td>
+        <td th:text="${music.name}"></td>
+        <td th:text="${music.artist}"></td>
+        <td th:text="${music.category}"></td>
+        <td><a th:href="@{${music.link}}">Link</a></td>
+        <td>
+            <a th:href="@{/music/edit(id=${music.id})}">Edit</a>
+        </td>
+        <td>
+            <a th:href="@{/music/delete(id=${music.id})}">Delete</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

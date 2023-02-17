@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>create Muic</h3>
+<form th:object="${music}" th:action="@{/music/create}" method="post">
+  Name Music :
+  <input th:field="*{nameMusic}" ><br><br>
+  Artist :
+  <input th:field="*{artist}" /><br><br>
+  Category :
+  <input th:field="*{category}" /><br><br>
+  Link :
+  <input th:field="*{link}" /><br><br>
+  <button>Save</button>
+</form>
+</body>
+</html>
