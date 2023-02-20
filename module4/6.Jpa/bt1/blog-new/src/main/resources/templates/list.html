@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Danh sách blog</h1>
+<a href="/blogs/create">Create new blog</a>
+<form action="/blogs/list">
+  <input name="searchName" placeholder="nhập tên">
+  <button>Search</button>
+</form>
+<p th:text="mes"></p>
+<table border="1">
+  <tr>
+    <th>STT</th>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Time</th>
+    <th>Detail</th>
+  </tr>
+  <tr th:each="blog,row :${listBlogs}">
+    <td th:text="${row.count}"></td>
+    <td th:text="${blog.id}"></td>
+    <td th:text="${blog.name}"></td>
+    <td th:text="${blog.time}"></td>
+    <td>
+      <a th:href="@{/blogs/detail/{id}(id=${blog.id})}">Detail</a>
+      <a th:href="@{/blogs/edit/{id}(id=${blog.id})}">Edit</a>
+      <a th:href="@{/blogs/delete/{id}(id=${blog.id})}">Delete</a>
+    </td>
+  </tr>
+  <tr th:if="${listBlogs.isEmpty()}">
+    <td colspan="4">Danh sách trống</td>
+  </tr>
+</table>
+</body>
+</html>
