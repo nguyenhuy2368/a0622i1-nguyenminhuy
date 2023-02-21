@@ -19,6 +19,8 @@ insert into hinh_thuc_thanh_toan(idThanhToan, tenHinhThuc) values
 (1,'thang'),
 (2,'quy'),
 (3,'nam');
-insert into phong_tro(tenNguoiThue, sdt, ngayBatDau, idThanhToan, ghiChu) value
-('abc', '0123456789','20-20-2022',1,'2 nguoi');
+insert into phong_tro(tenNguoiThue, sdt, ngayBatDau, idThanhToan, ghiChu) values
+('Nguyen Van A', '0123456789','20-20-2022',2,'2 nguoi'),
+('Nguyen Van B', '0123456789','20-20-2022',3,'2 nguoi'),
+('Nguyen Van C', '0123456789','20-20-2022',1,'2 nguoi');
 select maPhongTro,tenNguoiThue, sdt, ngayBatDau, hinh_thuc_thanh_toan.idThanhToan,ghiChu from phong_tro join hinh_thuc_thanh_toan on phong_tro.idThanhToan = hinh_thuc_thanh_toan.idThanhToan;

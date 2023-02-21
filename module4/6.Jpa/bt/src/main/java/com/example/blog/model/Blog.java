@@ -1,15 +1,15 @@
-package com.example.blog.entity;
+package com.example.blog.model;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "blog")
 public class Blog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String blogName;
+
     private String content;
 
     public Blog() {

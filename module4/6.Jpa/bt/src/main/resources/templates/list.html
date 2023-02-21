@@ -13,17 +13,24 @@
         <button>Tim kiem</button>
     </form>
 
-    <table border="1">
-        <tr th:each="blogList,row:${blogList}">
-            <td th:text="${row.count}"></td>
-            <td th:text="${blogList.getId()}"></td>
-            <td th:text="${blogList.getName()}"></td>
+<!--    <table border="1">-->
+<!--        <tr th:each="blogList,row:${blogList}">-->
+<!--            <td th:text="${row.count}"></td>-->
+<!--            <td th:text="${blogList.getId()}"></td>-->
+<!--&lt;!&ndash;            <td th:text="${blogList.getName()}"></td>&ndash;&gt;-->
 
 
 
-            <td><a th:href="@{/news/detail/{id} (id=${blogList.getId()})}"><button> Detail</button></a></td>
-            <td><a th:href="@{/news/edit/{id} (id=${blogList.getId()})}"><button>Edit</button></a></td>
-            <td><a th:href="@{/news/delete/{id} (id=${blogList.getId()})}"><button>Delete</button></a></td>
+<!--            <td><a th:href="@{/news/detail/{id} (id=${blogList.getId()})}"><button> Detail</button></a></td>-->
+<!--            <td><a th:href="@{/news/edit/{id} (id=${blogList.getId()})}"><button>Edit</button></a></td>-->
+<!--            <td><a th:href="@{/news/delete/{id} (id=${blogList.getId()})}"><button>Delete</button></a></td>-->
+<!--        </tr>-->
+<!--    </table>-->
+</div>
+<div>
+    <table>
+        <tr th:each="blog">
+
         </tr>
     </table>
 </div>
