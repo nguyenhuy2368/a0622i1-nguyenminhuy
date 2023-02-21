@@ -10,7 +10,9 @@
 <form th:action="@{/blogs/remove}" th:object="${blogs}" method="post">
     <div>
         <input type="hidden" th:field="*{id}">
+        <label for="">Name</label>
         <input type="text" th:field="*{name}">
+        <label for="">Content</label>
         <input type="text" th:field="*{content}">
     </div>
     <button>Delete</button>
