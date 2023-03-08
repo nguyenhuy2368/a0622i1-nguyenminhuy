@@ -15,7 +15,7 @@ import javax.persistence.Id;
 @RequiredArgsConstructor
 @Getter
 @Setter
-public class AtachFacility {
+public class AttachFacility {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
