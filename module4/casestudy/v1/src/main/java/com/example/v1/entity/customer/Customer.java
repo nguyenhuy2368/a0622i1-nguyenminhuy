@@ -1,14 +1,14 @@
 package com.example.v1.entity.customer;
 
+import com.example.v1.entity.contract.Contract;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @NoArgsConstructor
@@ -27,4 +27,11 @@ public class Customer {
     private String email;
     private String address;
     private Integer isDelete = 1;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_type_id")
+    private CustomerType customerType;
+
+    @OneToMany(mappedBy = "customer")
+    private Set<Contract> contracts;
 }

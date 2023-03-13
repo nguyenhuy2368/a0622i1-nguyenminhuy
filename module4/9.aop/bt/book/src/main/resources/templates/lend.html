@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <form action="#" th:action="@{/book/lend}" th:object="${book}"
+          method="post" novalidate="novalidate">
+        <div class="prodetail">
+            <label>Name:</label>
+            <label th:text="${book.name}"></label>
+        </div>
+        <div>
+            <label>Code</label>
+            <input type="number" name="code"/>
+        </div>
+        <input type="button" value="Cancel">
+        <input type="submit" value="I'm sure lend"/>
+    </form>
+</div>
+</body>
+</html>

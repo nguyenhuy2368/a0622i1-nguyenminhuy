@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Edit book</h3>
+<p>
+    <a th:href="@{/book}">
+        Back to book list
+    </a>
+</p>
+<div id="form">
+    <form action="#" th:action="@{/book/order}" th:object="${order}"
+          method="post" novalidate="novalidate">
+        <input type="hidden"  th:value="*{id}"/>
+        <input type="hidden" name="id" th:value="${book.id}"/>
+        <div>
+            <label>Name Book</label>
+            <input type="text" th:value="${book.name}" disabled/>
+        </div>
+        <div>
+            <label>Code Borrow</label>
+            <input type="text" th:field="*{code}" disabled/>
+        </div>
+        <div>
+            <label>Date Borrow</label>
+            <input type="text" th:field="*{date}" disabled/>
+        </div>
+        <input type="button" value="Cancel">
+        <input type="submit" value="I'm sure borrow"/>
+    </form>
+</div>
+</body>
+</html>

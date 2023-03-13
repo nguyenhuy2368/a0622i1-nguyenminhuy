@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Add New blog</h3>
+<p>
+  <a th:href="@{/list.html}">
+    Back to book list
+  </a>
+</p>
+<div id="form">
+  <form th:action="@{/book/save}" th:object="${book}"
+        method="post" novalidate="novalidate">
+    <input type="hidden" th:field="*{id}"/>
+    <div>
+      <label>Name</label>
+      <input type="text" th:field="*{name}"/>
+    </div>
+    <div>
+      <label>Author</label>
+      <input type="text" th:field="*{count}"/>
+    </div>
+    <input type="submit" value="Save"/>
+  </form>
+</div>
+</body>
+</html>

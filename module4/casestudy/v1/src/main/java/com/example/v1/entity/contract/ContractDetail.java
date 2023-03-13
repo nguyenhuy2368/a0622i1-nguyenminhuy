@@ -5,10 +5,8 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 @Entity
 @NoArgsConstructor
 @RequiredArgsConstructor
@@ -20,4 +18,12 @@ public class ContractDetail {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Integer quantity;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "contract_id", referencedColumnName = "id")
+    private Contract contract;
+
+    @ManyToOne (cascade = CascadeType.ALL)
+    @JoinColumn(name = "attach_facility_id", referencedColumnName = "id")
+    private AttachFacility attachFacility;
 }

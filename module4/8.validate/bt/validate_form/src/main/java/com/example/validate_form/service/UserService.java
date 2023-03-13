@@ -19,4 +19,6 @@ public class UserService implements IUserService{
     public List<User> findAll() {
         return userRepository.findAll();
     }
+
+
 }
