@@ -1,5 +1,7 @@
 package com.example.product.dto;
 
+import java.util.Objects;
+
 public class ProductDto {
     private Long id;
     private String name;
@@ -66,5 +68,17 @@ public class ProductDto {
 
     public void setDiscount(int discount) {
         this.discount = discount;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ProductDto that = (ProductDto) o;
+        return id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

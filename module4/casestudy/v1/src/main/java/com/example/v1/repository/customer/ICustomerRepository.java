@@ -1,0 +1,7 @@
+package com.example.v1.repository.customer;
+
+import com.example.v1.entity.customer.Customer;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
+}
