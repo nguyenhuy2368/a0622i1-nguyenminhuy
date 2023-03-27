@@ -3,17 +3,14 @@ package com.example.v1.entity.contract;
 import com.example.v1.entity.customer.Customer;
 import com.example.v1.entity.employee.Employee;
 import com.example.v1.entity.facility.Facility;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @NoArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 

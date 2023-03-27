@@ -1,18 +1,14 @@
 package com.example.v1.entity.facility;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import com.example.v1.entity.contract.Contract;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @NoArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 public class Facility {
@@ -29,4 +25,16 @@ public class Facility {
     private Integer numberOfFloors;
     private String facilityFree;
     private Integer isDelete = 1;
+
+    @OneToMany(mappedBy = "facility")
+    private Set<Contract> contracts;
+
+    @ManyToOne
+    @JoinColumn(name = "facility_type_id")
+    private FacilityType facilityType;
+
+    @ManyToOne
+    @JoinColumn(name = "rent_type_id")
+    private RentType rentType;
+
 }

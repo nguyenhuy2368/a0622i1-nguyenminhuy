@@ -2,10 +2,7 @@ package com.example.v1.entity.employee;
 
 import com.example.v1.entity.contract.Contract;
 import com.example.v1.entity.user.User;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
@@ -13,7 +10,7 @@ import java.util.Set;
 
 @Entity
 @NoArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 

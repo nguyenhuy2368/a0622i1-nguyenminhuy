@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List contract</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+
+        table {
+            border: solid 3px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+         #wrapper {
+             right: 0;
+             margin: 0 auto;
+             display: block;
+             width: 960px;
+         }
+
+        #border-pagination {
+            margin: 0 auto;
+            padding: 0;
+            text-align: center
+        }
+
+        #border-pagination li {
+            display: inline;
+        }
+
+        #border-pagination li a {
+            display: block;
+            text-decoration: none;
+            color: red;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            background-color: white;
+            float: left;
+
+        }
+
+        #border-pagination li a {
+            -webkit-transition: background-color 0.4s;
+            transition: background-color 0.4s
+        }
+
+        #border-pagination li a.active {
+            background-color: deepskyblue;
+            color: #fff;
+        }
+
+        #border-pagination li a:hover:not(.active) {
+            background: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="p-3">
+        <h2 class="text-center fw-bold text-success">CONTRACT LIST</h2>
+
+        <nav class="navbar navbar-expand-lg py-0 my-0">
+            <div class="container-fluid">
+                <button class="btn btn-primary btn-outline-secondary btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#createContract">
+                    <span class="fa-solid fa-person-circle-plus text-light h5 my-auto me-1"></span>
+                    <span class="text-light">Add new contract</span>
+                </button>
+            </div>
+        </nav>
+
+        <!--    add new contract-->
+        <div class="modal fade" id="createContract" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form class="border border-2 border-success p-3 bg-success bg-opacity-25 rounded formCSS" th:action="@{/contract/create}"
+                          th:object="${contract}" method="POST">
+                        <div class="modal-header">
+                            <h3 class="modal-title fw-bold text-success" id="exampleModalLabel5">ADD NEW CONTRACT</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="h6 text-success" for="facility">Facility name:</label>
+                                <div class="input-group">
+                                    <select id="facility" class="form-select" th:field="*{facility.id}">
+                                        <option th:each="item : ${facilityList}" th:value="${item.id}"
+                                                th:text="${item.name}"
+                                                th:if="${item.facilityType.id != 3}"></option>
+                                    </select>
+                                    <span class="input-group-text"><i class="fa-solid fa-file-signature"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="mt-3 form-group">
+                                <label class="h6 text-success" for="employee">Employee name:</label>
+                                <div class="input-group">
+                                    <select id="employee" class="form-select" th:field="*{employee.id}">
+                                        <option th:each="item : ${employeeList}" th:value="${item.id}"
+                                                th:text="${item.name}" th:if="${item.division.id != 3}">
+                                        </option>
+                                    </select>
+                                    <span class="input-group-text"><i class="fa-solid fa-person-circle-question"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="mt-3 form-group">
+                                <label class="h6 text-success" for="customer">customer name:</label>
+                                <div class="input-group">
+                                    <select id="customer" class="form-select" th:field="*{customer.id}">
+                                        <option th:each="item : ${customerList}" th:value="${item.id}"
+                                                th:text="${item.name}"></option>
+                                    </select>
+                                    <span class="input-group-text"><i class="fa-solid fa-person-circle-question"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="mt-3 form-group">
+                                <label for="datepicker" class="h6 text-success">Start date:</label>
+                                <input type="date" id="datepicker" class="form-control" th:field="*{startDate}"/>
+                            </div>
+
+                            <div class="mt-3 form-group">
+                                <label for="datepicker1" class="h6 text-success">End date:</label>
+                                <input type="date" id="datepicker1" class="form-control" th:field="*{endDate}"/>
+                            </div>
+
+                            <div class="mt-3 form-group">
+                                <label for="deposit" class="h6 text-success">Deposit (VNĐ):</label>
+                                <div class="input-group">
+                                    <input type="number" id="deposit" class="form-control"
+                                           placeholder="Input deposit..." th:field="*{deposit}" required
+                                           pattern="^0|[1-9]\d*$"
+                                           title="deposit must be greater than or equal 0."/>
+                                    <span class="input-group-text"><i class="fa-solid fa-money-bill-wave"></i></span>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-success" value="delete">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <table id="contractTable" class="table table-striped table-bordered">
+            <thead>
+            <tr class="text-center bg-success">
+                <th class="text-center">Serial</th>
+                <th>Facility</th>
+                <th>Customer</th>
+                <th>Start day</th>
+                <th>End day</th>
+                <th>Deposit</th>
+                <th>Total money</th>
+                <th>Attach facility</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="contract, status : ${contracts}">
+                <td class="text-center" th:text="${contracts.getSize() * contracts.number + status.count}"></td>
+                <td th:text="${contract.getFacilityName()}"></td>
+                <td th:text="${contract.getCustomerName()}"></td>
+                <td th:text="${contract.getStartDate()}"></td>
+                <td th:text="${contract.getEndDate()}"></td>
+                <td th:text="${'₫ ' + contract.getDeposit()}"></td>
+                <td th:text="${'₫ ' + contract.getTotal()}"></td>
+                <td class="text-center">
+                    <button
+                            th:attr="onclick=|addContractDetail('${contract.id}')|"
+                            class="btn btn-primary btn-outline-secondary btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#addContractDetail">
+                        <span class="fa-solid fa-plus text-light h6 m-auto"></span>
+                    </button>
+
+                    <button class="btn btn-primary btn-outline-secondary btn-sm ms-3 px-3"  data-bs-toggle="modal" data-bs-target="#view"
+                            th:attr="onclick=|infoContractId('${contract.id}')|">
+                        <span class="text-light m-auto">Attach facility list</span>
+                    </button>
+
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+<!--        phân trang-->
+        <div class="row" style="width: 100%; padding: 0; margin: 0;">
+            <div id="wrapper" class="col-6">
+                <ul id="border-pagination">
+                    <li>
+                        <a th:href="@{'/contract'(page=0)}"
+                           title="first page">First</a></li>
+                    <li>
+                        <a th:href="@{'/contract'(page=${contracts.number - 1})}"
+                           th:if="${contracts.hasPrevious()}" title="previous page">Previous</a></li>
+                    <li><a href="#" class="active"><span
+                            th:text="${contracts.number+1}+'/'+${contracts.totalPages}"></span></a></li>
+                    <li>
+                        <a th:href="@{'/contract'(page=${contracts.number + 1})}"
+                           th:if="${contracts.hasNext()}" title="next page">Next</a></li>
+                    <li>
+                        <a th:href="@{'/contract'(page=${contracts.totalPages}-1)}"
+                           title="last page">Last</a></li>
+                </ul>
+            </div>
+        </div>
+
+<!--        modal attach list-->
+        <div class="modal fade" id="view" tabindex="-1" aria-labelledby="exampleModalLabel1"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel2">Attach Facility List</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-success table-striped">
+                           <thead>
+                           <tr>
+                               <th>Attach facility name</th>
+                               <th>Unit</th>
+                               <th>Quantity</th>
+                               <th>Status</th>
+                           </tr>
+                           </thead>
+                            <tbody id="attachFacilityList">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--        create contract detail-->
+        <div class="modal fade" id="addContractDetail" tabindex="-1" aria-labelledby="exampleModalLabel1"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form class="border border-2 border-success p-3 rounded formCSS"
+                          th:action="@{/contract/create-contract-detail}"
+                          th:object="${contractDetailDto}" method="POST">
+                        <div class="modal-header">
+                            <h3 class="modal-title fw-bold text-success" id="exampleModalLabel4">ATTACH FACILITY LIST</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <input type="hidden" name="contractId" id="contractId" th:field="*{contractId}"
+                                       readonly/>
+
+                                <div class="form-group">
+                                    <label class="h6 text-success" for="attachFacility">Attach facility name:</label>
+                                    <div class="input-group">
+                                        <select id="attachFacility" class="form-select"
+                                                th:field="*{attachFacilityId}">
+                                            <option th:each="x : ${attachFacilityList}"
+                                                    th:value="${x.id}"
+                                                    th:text="${x.name + ' (₫ ' + x.cost + ')'}"></option>
+                                        </select>
+                                        <span class="input-group-text"><i class="fa-solid fa-file-signature"></i></span>
+                                    </div>
+                                </div>
+
+                                <div class="mt-3 form-group">
+                                    <label for="quantity" class="h6 text-success">Quantity:</label>
+                                    <div class="input-group">
+                                        <input type="number" id="quantity" class="form-control"
+                                               placeholder="Input quantity" th:field="*{quantity}" required
+                                               pattern="^[1-9]\d*$"
+                                               title="Quantity must be greater than 0."/>
+                                        <span class="input-group-text">#</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-success" value="save">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>
+            function addContractDetail(id) {
+                document.getElementById("contractId").value = id;
+            }
+
+            $(function () {
+                $("#datepicker").datepicker({
+                    dateFormat: 'dd/mm/yy',
+                    changeYear: true,
+                    changeMonth: true,
+                    yearRange: "-80:-18",
+                    minDate: "-80Y", maxDate: "-18Y"
+                });
+            });
+
+            $(function () {
+                $("#datepicker1").datepicker({
+                    dateFormat: 'dd/mm/yy',
+                    changeYear: true,
+                    changeMonth: true,
+                    yearRange: "-80:-18",
+                    minDate: "-80Y", maxDate: "-18Y"
+                });
+            });
+
+            function infoContractId(id) {
+                $("#attachFacilityList").empty();
+                $.ajax({
+                    url: "http://localhost:8080/api/contract/v1/contract-detail/" + id,
+                    type: "GET",
+                    contentType: "application/json; charset =utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data);
+                        let tr = [];
+                        for (let i = 0; i < data.length; i++) {
+                            tr.push("<tr>")
+                            tr.push("<td>" + data[i].nameDto + " (đ " + data[i].costDto + ")"  + "</td>");
+                            tr.push("<td>" + data[i].quantityDto + "</td>");
+                            tr.push("<td>" + data[i].unitDto + "</td>");
+                            tr.push("<td>" + data[i].statusDto + "</td>");
+                            tr.push("</tr>")
+                        }
+                        $("#attachFacilityList").append(tr.join(""));
+                    }
+                })
+            }
+
+        </script>
+    </div>
+</div>
+</body>
+</html>

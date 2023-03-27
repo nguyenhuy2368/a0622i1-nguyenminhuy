@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Facility</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+</head>
+<body>
+<h2 class="text-center fw-bold text-success">UPDATE FACILITY</h2>
+
+<p class="text-center">
+    <a href="/facility"><i class="fa-solid fa-backward"></i> Back to Facility list</a>
+</p>
+
+<div class="d-flex justify-content-center">
+    <form class="w-50 border border-2 border-success p-3 bg-success bg-opacity-50 rounded" th:action="@{/facility/edit}"
+          method="post" th:object="${facilityDto}">
+
+        <input type="hidden" th:field="*{id}" readonly/>
+
+        <input type="hidden" th:field="*{facilityType.id}" readonly/>
+        <div class="form-group">
+            <label class="h6">Facility Type:</label>
+            <div class="input-group">
+                <input type="text" class="form-control" th:value="${facilityDto.facilityType.name}"
+                       readonly style="background-color: #b6bac2"/>
+                <span class="input-group-text"><i class="fa-solid fa-house-user"></i></span>
+            </div>
+        </div>
+
+
+        <div class="mt-3 form-group">
+            <label for="facilityName" class="h6">Facility name:</label>
+            <div class="input-group">
+                <input type="text" id="facilityName" class="form-control" th:field="*{name}"
+                       placeholder="Input Facility name"
+                       th:value="${facilityDto.name}" name="facilityName">
+                <span class="input-group-text"><i class="fa-solid fa-file-signature"></i></span>
+            </div>
+        </div>
+        <div class="form-group text-danger">
+            <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</p>
+        </div>
+
+        <div class="mt-3 form-group">
+            <label for="area" class="h6">Area (m<sup>2</sup>):</label>
+            <div class="input-group">
+                <input type="number" id="area" class="form-control" th:field="*{area}"
+                       placeholder="Input Facility area"
+                       th:value="${facilityDto.area}" name="facilityArea">
+                <span class="input-group-text"><i class="fa-solid fa-chart-area"></i></span>
+            </div>
+        </div>
+        <div class="form-group text-danger">
+            <p th:if="${#fields.hasErrors('area')}" th:errors="*{area}">Name Error</p>
+        </div>
+
+        <div class="mt-3 form-group">
+            <label for="cost" class="h6">Cost:</label>
+            <div class="input-group">
+                <input type="text" id="cost" class="form-control" th:field="*{cost}" placeholder="Input Cost"
+                       th:value="${facilityDto.cost}" name="facilityCost">
+                <span class="input-group-text"><i class="fa-solid fa-dollar-sign"></i></span>
+            </div>
+        </div>
+        <div class="form-group text-danger">
+            <p th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}">Name Error</p>
+        </div>
+
+        <div class="mt-3 form-group">
+            <label for="maxPeople" class="h6">Maximum number of people:</label>
+            <div class="input-group">
+                <input type="number" id="maxPeople" class="form-control" th:field="*{maxPeople}"
+                       placeholder="Input maximum number of people" th:value="${facilityDto.maxPeople}" name="maxPeople">
+                <span class="input-group-text"><i class="fa-solid fa-person"></i></span>
+            </div>
+        </div>
+        <div class="form-group text-danger">
+            <p th:if="${#fields.hasErrors('maxPeople')}" th:errors="*{maxPeople}">Name Error</p>
+        </div>
+
+        <div class="mt-3 form-group" id="standardRoomForm" th:if="${facilityDto.facilityType.id == 1 || facilityDto.facilityType.id == 2}">
+            <label for="standardRoom" class="h6">Standard room:</label>
+            <div class="input-group">
+                <input type="text" id="standardRoom" class="form-control" th:field="*{standardRoom}"
+                       th:value="${facilityDto.standardRoom}" name="standardRoom" value=" -">
+                <span class="input-group-text"><i class="fa-solid fa-star"></i></span>
+            </div>
+        </div>
+
+        <div class="mt-3 form-group" id="descriptionForm" th:if="${facilityDto.facilityType.id == 1 || facilityDto.facilityType.id == 2}">
+            <label for="description" class="h6">Description other convenience:</label>
+            <div class="input-group">
+                <input type="text" id="description" class="form-control" th:field="*{descriptionOtherConvenience}"
+                       th:value="${facilityDto.descriptionOtherConvenience}" name="otherConvenience" value=" -">
+                <span class="input-group-text"><i class="fa-solid fa-book"></i></span>
+            </div>
+        </div>
+
+        <div class="mt-3 form-group" id="poolAreaForm" th:if="${facilityDto.facilityType.id == 1}" >
+            <label for="poolArea" class="h6">Pool area (m<sup>2</sup>):</label>
+            <div class="input-group">
+                <input type="text" id="poolArea" class="form-control" th:field="*{poolArea}" name="poolArea"
+                       th:value="${facilityDto.poolArea}" value="0">
+                <span class="input-group-text"><i class="fa-solid fa-person-swimming"></i></span>
+            </div>
+        </div>
+
+        <div class="mt-3 form-group" id="numberOfFloorsForm" th:if="${facilityDto.facilityType.id == 1 || facilityDto.facilityType.id == 2}">
+            <label for="numberOfFloors" class="h6">Number of floors:</label>
+            <div class="input-group">
+                <input type="number" id="numberOfFloors" class="form-control" th:field="*{numberOfFloors}"
+                       th:value="${facilityDto.numberOfFloors}" name="numberOfFloor" value="0">
+                <span class="input-group-text"><i class="fa-solid fa-building"></i></span>
+            </div>
+        </div>
+        <div class="form-group text-danger">
+            <p th:if="${#fields.hasErrors('numberOfFloors')}" th:errors="*{numberOfFloors}">Name Error</p>
+        </div>
+
+        <div class="mt-3 form-group" id="facilityFreeForm" th:if="${facilityDto.facilityType.id == 3}" >
+            <label for="facilityFree" class="h6">Facility free:</label>
+            <div class="input-group">
+                <input type="text" id="facilityFree" class="form-control" th:field="*{facilityFree}" name="facilityFree"
+                       th:value="${facilityDto.name}" value=" -">
+                <span class="input-group-text"><i class="fa-solid fa-gift"></i></span>
+            </div>
+        </div>
+
+        <div class="mt-3 form-group">
+            <label class="h6" for="rentType">Rent Type:</label>
+            <div class="input-group">
+                <select id="rentType" class="form-select" name="id" th:field="*{rentType}">
+                    <option th:each="item : ${rentType}" th:value="${item.id}"
+                            th:text="${item.name}"
+                            th:selected="${item.id == facilityDto.rentType.id}"></option>
+                </select>
+                <span class="input-group-text"><i class="fa-solid fa-ranking-star"></i></span>
+            </div>
+        </div>
+
+        <div class="mt-3 text-center">
+            <button class="btn btn-info btn-outline-success btn-sm border border-2 border-success text-dark">
+                -- Update <i class="fa-solid fa-floppy-disk"></i> --
+            </button>
+        </div>
+    </form>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+</body>
+</html>
