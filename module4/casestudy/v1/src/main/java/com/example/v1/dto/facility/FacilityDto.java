@@ -27,30 +27,35 @@ public class FacilityDto implements Validator {
 
     private String name;
 
-    @NotBlank(message = "Diện tích sử dụng không được để trống.")
-    @Pattern(regexp = "^[1-9]\\d*| *$", message = "Diện tích sử dụng phải là số nguyên dương.")
-    private Integer area;
 
-    @NotBlank(message = "Chi phí thuê không được để trống.")
+    @Pattern(regexp = "^[1-9]\\d*| *$", message = "Diện tích sử dụng phải là số nguyên dương.")
+    private String area;
+
     @Pattern(regexp = "^[1-9]\\d*| *$", message = "Chi phí thuê (VNĐ) phải là số nguyên dương.")
-    private Double cost;
-    @NotBlank(message = "Số người tối đa không được để trống.")
+    private String cost;
+
     @Pattern(regexp = "^[1-9]\\d*| *$", message = "Số người tối đa phải là số nguyên dương.")
-    private Integer maxPeople;
+    private String maxPeople;
 
     private String standardRoom;
+
     private String descriptionOtherConvenience;
 
     @Pattern(regexp = "^[1-9]\\d*| *$", message = "Diện tích hồ bơi phải là số nguyên dương.")
-    private Double poolArea;
+    private String poolArea;
 
 
     @Pattern(regexp = "^[1-9]\\d*| *$", message = "Số tầng phải là số nguyên dương.")
-    private Integer numberOfFloors;
+    private String numberOfFloors;
+
     private String facilityFree;
+
     private Integer isDelete = 1;
+
     private FacilityType facilityType;
+
     private RentType rentType;
+
     private Set<Contract> contracts;
 
     @Override

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+<body>
+
+<h1><span class="glyphicon glyphicon-home"></span>DANH SACH GIAO DICH DAT</h1>
+<hr>
+<div class="container">
+    <a class="add" th:href="@{/final/create}"> <span class="glyphicon glyphicon-plus"></span>Thêm mới</a>
+</div>
+<div class="search">
+    <form action="">
+        <input type="text" placeholder="name student" class="nameSearch">
+        <button type="submit">search</button>
+    </form>
+</div>
+<!--    table-->
+<div class="container-table">
+    <p>Customer List</p>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Mã giao dịch</th>
+            <th>Tên khách hàng</th>
+            <th>Ngày giao dịch</th>
+            <th>Loại dịch vụ</th>
+            <th>Đơn giá(VND/m2)</th>
+            <th>Diện tích(m2)</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody th:each=" row,rowStat : ${giaoDichs}">
+        <tr th:object="${row}">
+            <td th:text="*{idHouse}"></td>
+            <td th:text="*{khachHang.name}"></td>
+            <td th:text="*{ngayGiaoDich}"></td>
+            <td th:text="*{loaiDichVu ? 'Đất' : 'Nhà đất'}"></td>
+            <td th:text="*{donGia}"></td>
+            <td th:text="*{dienTich}"></td>
+            <td><a th:href="@{view/{id}(id=${row.idHouse})}">Chi tiết</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
