@@ -20,19 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f07f0fed-5f23-4d7f-994f-ff28022a4a1b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../module4/7.spring data repository/bt/blog-category/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/7.spring data repository/bt/blog-category/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module4/7.spring data repository/bt/blog-category/src/main/java/com/example/blogcategory/model/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/7.spring data repository/bt/blog-category/src/main/java/com/example/blogcategory/model/Blog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module4/8.validate/bt/validate_form/src/main/java/com/example/validate_form/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/8.validate/bt/validate_form/src/main/java/com/example/validate_form/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module4/casestudy/v1/src/main/java/com/example/v1/entity/contract/AttachFacility.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/casestudy/v1/src/main/java/com/example/v1/entity/contract/AttachFacility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module4/casestudy/v1/src/main/java/com/example/v1/entity/contract/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/casestudy/v1/src/main/java/com/example/v1/entity/contract/Contract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module4/casestudy/v1/src/main/java/com/example/v1/entity/contract/ContractDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/casestudy/v1/src/main/java/com/example/v1/entity/contract/ContractDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module4/casestudy/v1/src/main/java/com/example/v1/entity/customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/casestudy/v1/src/main/java/com/example/v1/entity/customer/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module4/casestudy/v1/src/main/java/com/example/v1/entity/customer/CustomerType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/casestudy/v1/src/main/java/com/example/v1/entity/customer/CustomerType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module4/casestudy/v1/src/main/java/com/example/v1/entity/employee/Division.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/casestudy/v1/src/main/java/com/example/v1/entity/employee/Division.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module4/casestudy/v1/src/main/java/com/example/v1/entity/employee/EducationDegree.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/casestudy/v1/src/main/java/com/example/v1/entity/employee/EducationDegree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module4/casestudy/v1/src/main/java/com/example/v1/entity/employee/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/casestudy/v1/src/main/java/com/example/v1/entity/employee/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module4/casestudy/v1/src/main/java/com/example/v1/entity/employee/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/casestudy/v1/src/main/java/com/example/v1/entity/employee/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module4/casestudy/v1/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/casestudy/v1/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +72,7 @@
       <workItem from="1670428965856" duration="1306000" />
       <workItem from="1670590399896" duration="2000" />
       <workItem from="1671352236177" duration="199000" />
+      <workItem from="1680693773811" duration="1257000" />
     </task>
     <servers />
   </component>
@@ -103,9 +92,9 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1670416198173">
+    <state x="739" y="258" key="FileChooserDialogImpl" timestamp="1680700127941">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="740" y="271" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1670416198173" />
+    <state x="739" y="258" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1680700127941" />
   </component>
 </project>
