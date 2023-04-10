@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin("*")
+@CrossOrigin
 @RestController
-@RequestMapping("api/contract/v1")
+@RequestMapping("/api/contract/v1")
 public class ContractRestController {
 
     @Autowired
     private IContractDetailService contractDetailService;
 
-    @GetMapping("contract-detail/{contractId}")
+    @GetMapping("/contract-detail/{contractId}")
     public ResponseEntity<List<IContractDetailDto>> getListContractDetail(@PathVariable Integer contractId) {
         List<IContractDetailDto> contractDetailList = contractDetailService.showAll(contractId);
         if (contractDetailList.isEmpty()) {

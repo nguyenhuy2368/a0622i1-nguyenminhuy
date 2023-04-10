@@ -17,10 +17,11 @@ import java.util.Set;
 @AllArgsConstructor
 @Getter
 @Setter
-
 public class CustomerDto implements Validator {
+
     private Integer id;
-@Range
+
+    @Range
     @NotBlank(message = "Tên không được để trống.")
     @Pattern(regexp = "^(([\\p{Lu}][\\p{Ll}]{1,8})(\\s([\\p{Lu}]|[\\p{Lu}][\\p{Ll}]{1,10})){0,5})| *$",
             message = "Tên khách hàng không được chứa số, và các kí tự đầu tiên của mỗi từ phải viết hoa.")
@@ -55,6 +56,7 @@ public class CustomerDto implements Validator {
     private CustomerType customerType;
 
     private Set<Contract> contracts;
+
     @Override
     public boolean supports(Class<?> clazz) {
         return false;
@@ -62,6 +64,6 @@ public class CustomerDto implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
-        CustomerDto customerDto =(CustomerDto) target;
+        CustomerDto customerDto = (CustomerDto) target;
     }
 }

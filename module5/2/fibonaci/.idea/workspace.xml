@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a80b0f9-61fb-476b-9eba-268aa2fcdd8a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../module3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module4/casestudy/v1/src/main/java/com/example/v1/controller/ContractRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module4/casestudy/v1/src/main/java/com/example/v1/controller/ContractRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module4/casestudy/v1/src/main/java/com/example/v1/dto/customer/CustomerDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module4/casestudy/v1/src/main/java/com/example/v1/dto/customer/CustomerDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +23,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Clone/A1120I1-TranThanhPhuong/Module5/1-Typescript" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="ts.external.directory.path" value="D:\A0622I1\module5\2\fibonaci\node_modules\typescript\lib" />
   </component>
   <component name="SvnConfiguration">
@@ -37,6 +38,9 @@
       <updated>1680873142229</updated>
       <workItem from="1680873143378" duration="306000" />
       <workItem from="1680873469949" duration="1717000" />
+      <workItem from="1680938730410" duration="1500000" />
+      <workItem from="1680962114634" duration="40000" />
+      <workItem from="1681118273897" duration="35000" />
     </task>
     <servers />
   </component>
@@ -49,9 +53,9 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1680875055797">
+    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1680962153190">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="740" y="271" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1680875055797" />
+    <state x="740" y="271" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1680962153190" />
   </component>
 </project>
