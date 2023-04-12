@@ -12,8 +12,8 @@ function sumFibonacci(count) {
         num1 = num2;
         num2 = sum;
     }
-    console.log("fi :" + fi);
-    console.log("sum " + sum);
+    console.log("fi" + fi);
+    console.log("sum" + sum);
     return sum;
 }
 sumFibonacci(15);

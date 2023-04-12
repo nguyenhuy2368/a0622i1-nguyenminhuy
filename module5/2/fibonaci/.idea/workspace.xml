@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a80b0f9-61fb-476b-9eba-268aa2fcdd8a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../module4/casestudy/v1/src/main/java/com/example/v1/controller/ContractRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module4/casestudy/v1/src/main/java/com/example/v1/controller/ContractRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../module4/casestudy/v1/src/main/java/com/example/v1/dto/customer/CustomerDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module4/casestudy/v1/src/main/java/com/example/v1/dto/customer/CustomerDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module5/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../module5/src/app/app-routing.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +23,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="D:\A0622I1\module5\2\fibonaci\node_modules\prettier" />
     <property name="ts.external.directory.path" value="D:\A0622I1\module5\2\fibonaci\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -41,11 +44,13 @@
       <workItem from="1680938730410" duration="1500000" />
       <workItem from="1680962114634" duration="40000" />
       <workItem from="1681118273897" duration="35000" />
+      <workItem from="1681305395463" duration="56000" />
+      <workItem from="1681306848801" duration="879000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
     <option name="exactExcludedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/index.js" />
