@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <td>Color</td>
+  </tr>
+  <tr>
+    <td>
+      <button type="button" (click)="change('red')" style="color: red">Red</button>
+    <td>
+      <button type="button" (click)="change('blue')" style="color: blue">Blue</button>
+    </td>
+    <td>
+      <button type="button" (click)="change('yellow')" style="color: yellow">Yellow</button>
+    </td>
+  </tr>
+</table>
+<h1 [style.color]="color">Change Color</h1>
