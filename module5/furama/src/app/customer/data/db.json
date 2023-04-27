@@ -1,0 +1,100 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "Nguyễn Văn A",
+      "gender": {
+        "id": 1,
+        "name": "nam"
+      },
+      "idCard": 123456789,
+      "phoneNumber": 9123456789,
+      "email": "abc@123",
+      "address": "ĐN",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Nguyễn Văn A",
+      "gender": {
+        "id": 0,
+        "name": "nữ"
+      },
+      "idCard": 123456789,
+      "phoneNumber": 9123456789,
+      "email": "abc@123",
+      "address": "ĐN",
+      "customerType": {
+        "id": 2,
+        "name": "Platinium"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Nguyễn Văn A",
+      "gender": {
+        "id": 1,
+        "name": "nam"
+      },
+      "idCard": 123456789,
+      "phoneNumber": 9123456789,
+      "email": "abc@123",
+      "address": "ĐN",
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Nguyễn Văn A",
+      "gender": {
+        "id": 0,
+        "name": "nữ"
+      },
+      "idCard": 123456789,
+      "phoneNumber": 9123456789,
+      "email": "abc@123",
+      "address": "ĐN",
+      "customerType": {
+        "id": 4,
+        "name": "Silver"
+      }
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "MemberMember"
+    }
+  ],
+  "gender": [
+    {
+      "id": 1,
+      "name": "nam"
+    },
+    {
+      "id": 0,
+      "name": "nữ"
+    }
+  ]
+}
