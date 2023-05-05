@@ -1,0 +1,128 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "name": "IPhone"
+    },
+    {
+      "id": 2,
+      "name": "Samsung"
+    },
+    {
+      "id": 3,
+      "name": "LG"
+    }
+  ],
+  "product": [
+    {
+      "name": "IPhone 123",
+      "price": 24000000,
+      "description": "New",
+      "category": {
+        "id": 2,
+        "name": "Samsung"
+      },
+      "id": 1
+    },
+    {
+      "name": "IPhone 11",
+      "price": 15600000,
+      "description": "Like New",
+      "category": {
+        "id": 1,
+        "name": "IPhone"
+      },
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "IPhone X",
+      "price": 75400000,
+      "description": "97%",
+      "category": {
+        "id": 1,
+        "name": "Iphone"
+      }
+    },
+    {
+      "name": "IPhone 8",
+      "price": 96800000,
+      "description": "98%",
+      "category": {
+        "id": 3,
+        "name": "LG"
+      },
+      "id": 4
+    },
+    {
+      "name": "IPhone 11 Pro",
+      "price": 18950000,
+      "description": "Like New",
+      "category": {
+        "id": 1,
+        "name": "IPhone"
+      },
+      "id": 5
+    },
+    {
+      "name": "CHou",
+      "price": 12345,
+      "description": "Brauty",
+      "category": {
+        "id": 2,
+        "name": "Samsung"
+      },
+      "id": 12
+    },
+    {
+      "name": "Chouu",
+      "price": 2345,
+      "description": "beauty",
+      "category": {
+        "id": 1,
+        "name": "IPhone"
+      },
+      "id": 11
+    },
+    {
+      "name": "chou",
+      "price": 1234,
+      "description": "beauty",
+      "category": {
+        "id": 1,
+        "name": "Iphone"
+      },
+      "id": 167
+    },
+    {
+      "name": "IPhone",
+      "price": 1234568,
+      "description": "new ",
+      "category": {
+        "id": 2,
+        "name": "Samsung"
+      },
+      "id": 168
+    },
+    {
+      "name": "12",
+      "price": 14,
+      "description": "122",
+      "category": {
+        "id": 1,
+        "name": "IPhone"
+      },
+      "id": 169
+    },
+    {
+      "name": "Chouu",
+      "price": 123,
+      "description": "Beauty",
+      "category": {
+        "id": 1,
+        "name": "IPhone"
+      },
+      "id": 170
+    }
+  ]
+}
