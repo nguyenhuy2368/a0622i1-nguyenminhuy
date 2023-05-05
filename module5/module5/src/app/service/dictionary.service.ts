@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
-import {Iword} from '../ss7/iword';
+import {IWord} from '../model/iword';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DictionaryService {
-  words: Iword[] = [
+  words: IWord[] = [
     {
       word: 'hello',
       mean: 'xin chao'
@@ -22,10 +23,14 @@ export class DictionaryService {
 
   constructor() {
   }
-  findAll(): Iword[] {
+  findAll() {
     return this.words;
   }
+
   findByWord(word: string){
     return this.words.find(item => item.word === word);
+  }
+  translate(index) {
+    return this.words[index];
   }
 }

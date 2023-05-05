@@ -1,0 +1,96 @@
+<div class="container">
+
+  <div class="col-2"></div>
+  <div class="col-8">
+    <h3>Register Form :</h3>
+    <form [formGroup]="register" (ngSubmit)="onSubmit()"  >
+      <div class="form-group">
+        <label for="Email">Email :</label>
+        <input type="text"  class="form-control" id="Email" formControlName="email" placeholder="Email">
+      </div>
+      <div>
+        <p class="col alert alert-danger" role="alert" *ngIf="register.controls.email.hasError('required') && register.controls.email.touched">
+          Can not empty...!!!
+        </p>
+        <p class="col alert alert-danger" role="alert" *ngIf="register.controls.email.hasError('pattern')">
+          Invalid format....
+        </p>
+        <p class="col alert alert-danger" role="alert" *ngIf="register.controls.email.hasError('minlength')">
+          > 6
+        </p>
+      </div>
+      <fieldset formGroupName="passwordGroup">
+        <div class="form-group">
+          <label for="password">Password :</label>
+          <input type="text" class="form-control" id="Password" formControlName="password" placeholder="Password">
+        </div>
+        <div>
+          <p class="col alert alert-danger" role="alert" *ngIf="register.controls.passwordGroup.get('password').touched
+                                                                && register.controls.passwordGroup.get('password').hasError('required')">
+            Can not empty...!!!
+          </p>
+          <p class="col alert alert-danger" role="alert" *ngIf="register.controls.passwordGroup.get('password').hasError('minlength')">
+            Must be > 6 characters
+          </p>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm password</label>
+          <input type="text" class="form-control" id="confirmPassword" formControlName="confirmPassword"
+                 placeholder="Confirm password">
+        </div>
+        <div>
+          <p class="col alert alert-danger" role="alert" *ngIf="register.controls.passwordGroup.hasError('notmatch')
+                                                                 && register.controls.passwordGroup.get('confirmPassword').touched">
+            Not match
+          </p>
+        </div>
+      </fieldset>
+      <div class="form-group">
+        <label for="country">Country</label>
+        <select  class="form-control" formControlName="country" id="country">
+          <option value="">----</option>
+          <option value="Hue">Huế</option>
+          <option value="Da Nang">Đà Nẵng</option>
+          <option value="Quang Nam">QN</option>
+          <option value="Quang Ngai">Qn</option>
+        </select>
+      </div>
+      <div>
+        <p class="col alert alert-danger" role="alert" *ngIf="register.controls.country.hasError('required') && register.controls.country.touched">
+          please select a country !!!
+        </p>
+      </div>
+      <div class="form-group">
+        <label for="age">Date of birth</label>
+        <input type="date" class="form-control" id="age" formControlName="age" placeholder="Date of birth">
+        <p class="col alert alert-danger" role="alert" *ngIf="register.controls.age.touched && register.controls.age.hasError('invalid')" >
+          Age can not less than 18 ...
+        </p>
+      </div>
+      <div class="form-group">
+        <span>Gender : </span>
+        <input class="ml-3" type="radio" id="male"  formControlName="gender" name="gender" value="male">
+        <label class="mr-3" for="male">Male</label>
+        <input type="radio" id="female"  formControlName="gender" name="gender" value="female">
+        <label for="female">Female</label>
+        <p class="col alert alert-danger" role="alert" *ngIf="register.controls.gender.hasError('required') && register.controls.gender.touched" >
+          please select one of them !!!
+        </p>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone number :</label>
+        <input type="text" class="form-control" id="phone" formControlName="phone" placeholder="Phone number">
+        <p class="col alert alert-danger" role="alert" *ngIf="register.controls.phone.hasError('required') && register.controls.phone.touched">
+          Phone number can not empty....
+        </p>
+        <p class="col alert alert-danger" role="alert" *ngIf="register.controls.phone.hasError('pattern')">
+          Invalid format...!
+        </p>
+      </div>
+      <div>
+        <input type="submit" [disabled]="!register.valid" class="btn btn-primary" style="text-align: right">
+      </div>
+    </form>
+  </div>
+  <div class="col-2"></div>
+</div>
