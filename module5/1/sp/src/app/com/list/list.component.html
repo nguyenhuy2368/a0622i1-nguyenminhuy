@@ -1,0 +1,63 @@
+<div class="container">
+  <h3>Danh sách lô hàng</h3>
+  <div class="row">
+    <div class="col-2">Tên</div>
+    <div class="col-2">
+      <input type="text" [(ngModel)]="name">
+    </div>
+    <div class="col-2"></div>
+    <div class="2">
+      <button (click)="timkiem()">Tìm kiếm</button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-2">Ngày hết hạn</div>
+    <div class="col-2">
+      <input type="date" [(ngModel)]="ngayhethan">
+    </div>
+    <div class="col-2"></div>
+    <div class="2">
+      <button (click)="timkiemnhh()">Tìm kiếm</button>
+    </div>
+  </div>
+
+  <button (click)="openDialogNhapHang()" class="btn btn-success">Nhập hàng</button>
+  <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>Mã lô hàng</th>
+      <th>Tên sản phẩm</th>
+      <th>Giá tiền</th>
+      <th>Đơn vị tính</th>
+      <th>Số lượng</th>
+      <th>Ngaày sản xuất</th>
+      <th>Ngày hết hạn</th>
+      <th>Ngày sản xuất</th>
+      <th>Thao tác</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let lohang of lohangs">
+      <td>{{lohang.idLoHang}}</td>
+      <td>{{lohang.sanPham.ten}}</td>
+      <td>{{lohang.sanPham.giaTien}}</td>
+      <td>{{lohang.sanPham.donVi}}</td>
+      <td>{{lohang.soLuong}}</td>
+      <td>{{lohang.ngaysanXuat | date:'dd/MM/yyyy'}}</td>
+      <td>{{lohang.ngayNhapHang | date:'dd/MM/yyyy'}}</td>
+      <td>{{lohang.ngayHetHan | date:'dd/MM/yyyy'}}</td>
+
+      <td style="display: flex; justify-content: space-between">
+        <button class="btn btn-danger" (click)="openDialogDelete(lohang)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+<!--  <div style="display: flex;justify-content: end">-->
+<!--    <pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+<!--  </div>-->
+
+</div>
+
+

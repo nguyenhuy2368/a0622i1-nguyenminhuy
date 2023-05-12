@@ -1,0 +1,53 @@
+<h3>Tạo mới lô hàng</h3>
+<form [formGroup]="loHangForm" (ngSubmit)="luuLoHang()">
+
+  <div>
+    <label>Mã lô hàng</label>
+    <input id="name" type="text" formControlName="idLoHang">
+    <span *ngIf="loHangForm.get('idLoHang')?.hasError('required')">Không được để trốngg</span>
+    <span *ngIf="loHangForm.get('idLoHang')?.hasError('pattern') ">Sai định dạng mã lô hàng</span>
+  </div>
+  <div>
+    <label>Sản phẩm</label>
+    <select formControlName="sanPham">
+      <option *ngFor="let sanpham of sanphams" [ngValue]="sanpham">{{sanpham.ten}}</option>
+    </select>
+    <span *ngIf="loHangForm.get('sanPham')?.hasError('required')">Không được để trống</span>
+  </div>
+  <div>
+    <label>Số lượng</label>
+    <input type="number" formControlName="soLuong">
+    <span *ngIf="loHangForm.get('soLuong')?.hasError('required')">Không được để trống</span>
+    <span *ngIf="loHangForm.get('soLuong')?.hasError('min')">Số lượng phải lớn hơn 0</span>
+
+  </div>
+  <div>
+    <label>Ngày nhập hàng</label>
+    <input type="date" formControlName="ngayNhapHang">
+    <span *ngIf="loHangForm.get('ngayNhapHang')?.hasError('required')">Không được để trống</span>
+
+  </div>
+  <div>
+    <label>Ngaày sản xuất</label>
+    <input type="date" formControlName="ngaysanXuat">
+    <span *ngIf="loHangForm.get('ngaysanXuat')?.hasError('required')">Không được để trống</span>
+  </div>
+  <div>
+    <label>Ngày hết hạn</label>
+    <input type="date" formControlName="ngayHetHan">
+    <span *ngIf="loHangForm.get('ngayHetHan')?.hasError('required')">Không được để trống</span>
+  </div>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-2"></div>
+    <div class="col-2"></div>
+    <div class="col-2"></div>
+    <div class="col-2">
+      <button class="btn btn-success" (click)="closeDialogCreate()">Đóng</button>
+    </div>
+    <div class="col-2">
+      <button class="btn btn-primary">Thêm mới</button>
+    </div>
+  </div>
+
+</form>

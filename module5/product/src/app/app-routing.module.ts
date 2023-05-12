@@ -7,10 +7,10 @@ const routes: Routes = [
     path: 'product',
     loadChildren: () => import('./product/product.module').then(module => module.ProductModule)
   },
-  // {
-  //   path: 'category',
-  //   loadChildren: () => import('./category/category.module').then(module => module.CategoryModule)
-  // }
+  {
+    path: 'category',
+    loadChildren: () => import('./category/category.module').then(module => module.CategoryModule)
+  }
 ];
 
 @NgModule({

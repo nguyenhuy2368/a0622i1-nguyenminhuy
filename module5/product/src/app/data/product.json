@@ -1,5 +1,5 @@
 {
-  "category": [
+  "categorys": [
     {
       "id": 1,
       "name": "IPhone"
@@ -13,10 +13,10 @@
       "name": "LG"
     }
   ],
-  "product": [
+  "products": [
     {
       "name": "IPhone 123",
-      "price": 24000000,
+      "price": 24000001,
       "description": "New",
       "category": {
         "id": 2,

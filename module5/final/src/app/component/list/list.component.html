@@ -1,0 +1,90 @@
+<div class="container">
+  <h2>Danh sách các bài viết</h2>
+</div>
+<div class="container">
+  <div class="row mt-3 ">
+    <div class="col-10">
+      <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Tìm
+      </button>
+    </div>
+    <div class="col-2">
+      <button class=" btn btn-primary " [routerLink]="['/create']"><i class="fas fa-plus"></i> Đăng tin mới</button>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Post</th>
+        <th scope="col">Category</th>
+        <th scope="col">Date of post</th>
+        <th scope="col">Status</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let h of houseList">
+        <td>{{h.title}}</td>
+        <td>{{h.post}}</td>
+        <td>{{h.category.name}}</td>
+        <td>{{h.dateOfPost}}</td>
+        <td>{{h.status}}</td>
+      </tr>
+      <tr *ngIf="!categoryList">
+        <td colspan="7" style="text-align: center;color: red">List is empty</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">x</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <label>Diện tích:
+            <select [(ngModel)]="area">
+              <option value=''>Tất cả</option>
+              <option value='200'> >= 200m2</option>
+              <option value='500'> >= 500m2</option>
+            </select>
+          </label>
+        </div>
+        <div>
+          <label>Giá:
+            <select [(ngModel)]="price">
+              <option value=''>Tất cả</option>
+              <option value='200000000'> >= 200 triệu</option>
+              <option value='1000000000'> >= 1 tỷ</option>
+            </select>
+          </label>
+        </div>
+        <div>
+          <label>Hướng:
+            <select [(ngModel)]="direction">
+              <option value=''>Tất cả</option>
+              <option value='Đông'>Đông</option>
+              <option value='Tây'>Tây</option>
+              <option value='Nam'>Nam</option>
+              <option value='Bắc'>Bắc</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal" (click)="search()">Tìm kiếm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

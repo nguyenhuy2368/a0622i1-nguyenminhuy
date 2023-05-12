@@ -1,0 +1,46 @@
+{
+  "lohangs": [
+    {
+      "id": 1,
+      "idLoHang": "LH-0001",
+      "sanPham": {
+        "ten": "OMO",
+        "xuatXu": "Viet Nam",
+        "giaTien": 5000,
+        "donVi": "bao"
+      },
+      "soLuong": 5,
+      "ngayNhapHang": "2021-12-01",
+      "ngaysanXuat": "2021-12-01",
+      "ngayHetHan": "2021-12-01"
+    },
+    {
+      "idLoHang": "LH-0002",
+      "sanPham": {
+        "ten": "OMO",
+        "xuatXu": "Viet Nam",
+        "giaTien": 5000,
+        "donVi": "bao"
+      },
+      "soLuong": 4,
+      "ngayNhapHang": "2023-05-08",
+      "ngaysanXuat": "2023-05-12",
+      "ngayHetHan": "2023-05-30",
+      "id": 2
+    }
+  ],
+  "sanphams": [
+    {
+      "ten": "OMO",
+      "xuatXu": "Viet Nam",
+      "giaTien": 5000,
+      "donVi": "bao"
+    },
+    {
+      "ten": "OTO",
+      "xuatXu": "Viet Nam",
+      "giaTien": 5000,
+      "donVi": "bao"
+    }
+  ]
+}

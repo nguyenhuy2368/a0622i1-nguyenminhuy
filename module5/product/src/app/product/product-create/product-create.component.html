@@ -18,6 +18,7 @@
       <td>Category</td>
       <td>
         <select formControlName="category">
+          <option value="">Chọn 1 </option>
           <option *ngFor="let x of categories" [ngValue]="x">{{x.name}}</option>
         </select>
       </td>

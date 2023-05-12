@@ -1,0 +1,130 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h3 style="color: #046056">Đăng tin mới</h3>
+      <form [formGroup]="createForm" *ngIf="createForm" (ngSubmit)="submit()">
+        <div class="form-group">
+          <label for="category">Danh mục</label>
+          <select formControlName="category" class="form-control" id="category">
+            <option disabled value="">Vui lòng chọn</option>
+            <option *ngFor="let c of categoryList" [ngValue]="c">{{c.name}}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="city">Vùng miền</label>
+          <select formControlName="city" class="form-control" id="city">
+            <option  disabled value="">Vui lòng chọn</option>
+            <option *ngFor="let c of cityList" [ngValue]="c">{{c.name}}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Ngày đăng</label>
+          <input type="date" formControlName="dateOfPost" id="date" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <span>Bạn đăng tin : </span>
+          <input class="ml-3" type="radio" id="sell"  formControlName="post" name="post" value="Cần bán">
+          <label class="mr-3" for="sell">Cần bán</label>
+          <input type="radio" id="buy"  formControlName="post" name="post" value="Cần mua">
+          <label for="buy">Cần mua</label>
+        </div>
+
+        <div class="form-group">
+          <span>Trạng thái : </span>
+          <input class="ml-3" type="radio" id="new"  formControlName="status" name="status" value="Mới">
+          <label class="mr-3" for="new">Mới</label>
+          <input class="mr-3" type="radio" id="old"  formControlName="status" name="status" value="Đã sử dụng">
+          <label class="mr-3" for="old">Đã sử dụng</label>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" formControlName="address" class="form-control" id="address" placeholder="Address">
+        </div>
+        <div>
+          <p class="col alert alert-danger" role="alert"
+             *ngIf="createForm.controls.address.hasError('required') && createForm.controls.address.touched">
+            Không được để trống.
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label for="area">Diện tích</label>
+          <input type="number" formControlName="area" id="area" class="form-control">
+        </div>
+        <div>
+          <p class="col alert alert-danger" role="alert"
+             *ngIf="createForm.controls.area.hasError('required') && createForm.controls.area.touched">
+            Không được để trống.
+          </p>
+          <p class="col alert alert-danger" role="alert"
+             *ngIf="createForm.controls.area.hasError('min')">
+            Phải >= 20 m <sup>2</sup>
+          </p>
+        </div>
+
+
+        <div class="form-group">
+          <label for="direction">Hướng</label>
+          <select formControlName="direction" class="form-control" id="direction">
+            <option disabled value="">Vui lòng chọn</option>
+            <option value="Đông">Đông</option>
+            <option value="Tây">Tây</option>
+            <option value="Nam">Nam</option>
+            <option value="Bắc">Bắc</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="tilte">Tựa đề</label>
+          <input type="text" formControlName="title" id="tilte" class="form-control">
+        </div>
+        <div>
+          <p class="col alert alert-danger" role="alert"
+             *ngIf="createForm.controls.title.hasError('required') && createForm.controls.title.touched">
+            Không được để trống.
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Nội dung</label>
+          <textarea formControlName="content" id="content" class="form-control"></textarea>
+        </div>
+        <div>
+          <p class="col alert alert-danger" role="alert"
+             *ngIf="createForm.controls.content.hasError('required') && createForm.controls.content.touched">
+            Không được để trống.
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label for="price">Giá</label>
+          <input type="number" formControlName="price" class="form-control" id="price">
+        </div>
+        <div>
+          <p class="col alert alert-danger" role="alert"
+             *ngIf="createForm.controls.price.hasError('required') && createForm.controls.price.touched">
+            Không được để trống.
+          </p>
+          <p class="col alert alert-danger" role="alert"
+             *ngIf="createForm.controls.price.hasError('min')">
+            Phải >= 100 triệu VND.
+          </p>
+        </div>
+
+        <div class="clearfix">
+          <button type="button" (click)="submit()" [disabled]="!createForm.valid" class="btn btn-success float-right" data-toggle="modal" data-target="#exampleModal">
+            Đăng tin
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+

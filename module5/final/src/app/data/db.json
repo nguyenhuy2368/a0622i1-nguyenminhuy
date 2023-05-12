@@ -1,0 +1,148 @@
+{
+  "citys": [
+    {
+      "id": 1,
+      "name": "Đà Nẵng"
+    },
+    {
+      "id": 2,
+      "name": "Hà Nội"
+    },
+    {
+      "id": 3,
+      "name": "HCM"
+    }
+  ],
+  "categorys": [
+    {
+      "id": 1,
+      "name": "Nhà Đất"
+    },
+    {
+      "id": 2,
+      "name": "Khách Sạn"
+    }
+  ],
+  "houses": [
+    {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Nhà Đất"
+      },
+      "city": {
+        "id": 1,
+        "name": "Đà Nẵng"
+      },
+      "dateOfPost": "2023-5-5",
+      "post": "Cần",
+      "status": "Mới",
+      "address": "123 Nguyễn Tất thành",
+      "area": 100,
+      "direction": "Đông",
+      "title": "Đông 200m2 200tr",
+      "content": "abcdef",
+      "price": 200000000
+    },
+    {
+      "category": {
+        "id": 1,
+        "name": "Nhà Đất"
+      },
+      "city": {
+        "id": 1,
+        "name": "Đà Nẵng"
+      },
+      "dateOfPost": "2023-05-10",
+      "post": "Cần mua",
+      "status": "Đã sử dụng",
+      "address": "321Abc",
+      "area": 300,
+      "direction": "Bắc",
+      "title": "Bắc 300m2 2ty",
+      "content": "ádsadas",
+      "price": 2000000000,
+      "id": 2
+    },
+    {
+      "category": {
+        "id": 2,
+        "name": "Khách Sạn"
+      },
+      "city": {
+        "id": 2,
+        "name": "Hà Nội"
+      },
+      "dateOfPost": "2023-05-11",
+      "post": "Cần bán",
+      "status": "Mới",
+      "address": "Ha Noi",
+      "area": 100,
+      "direction": "Tây",
+      "title": "Tây 100m2 100tr",
+      "content": "30 tầng",
+      "price": 100000000,
+      "id": 3
+    },
+    {
+      "category": {
+        "id": 2,
+        "name": "Khách Sạn"
+      },
+      "city": {
+        "id": 3,
+        "name": "HCM"
+      },
+      "dateOfPost": "2023-05-02",
+      "post": "Cần bán",
+      "status": "Đã sử dụng",
+      "address": "1111",
+      "area": 1000,
+      "direction": "Nam",
+      "title": "Nam 1000m2 5ty",
+      "content": "21323213sdasdas",
+      "price": 5000000000,
+      "id": 4
+    },
+    {
+      "category": {
+        "id": 2,
+        "name": "Khách Sạn"
+      },
+      "city": {
+        "id": 1,
+        "name": "Đà Nẵng"
+      },
+      "dateOfPost": "2023-05-09",
+      "post": "Cần bán",
+      "status": "Đã sử dụng",
+      "address": "321Abc",
+      "area": 500,
+      "direction": "Đông",
+      "title": "Đông 500m2 500tr",
+      "content": "ádsadasdasda",
+      "price": 500000000,
+      "id": 5
+    },
+    {
+      "category": {
+        "id": 1,
+        "name": "Nhà Đất"
+      },
+      "city": {
+        "id": 1,
+        "name": "Đà Nẵng"
+      },
+      "dateOfPost": "2023-05-10",
+      "post": "Cần bán",
+      "status": "Mới",
+      "address": "321Abc",
+      "area": 20.1,
+      "direction": "Tây",
+      "title": "abc",
+      "content": "abc",
+      "price": 100000001,
+      "id": 6
+    }
+  ]
+}

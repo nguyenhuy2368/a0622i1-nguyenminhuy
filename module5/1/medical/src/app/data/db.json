@@ -1,0 +1,54 @@
+{
+  "patient": [
+    {
+      "id": "BN-132",
+      "name": "Nguyễn Văn A"
+    },
+    {
+      "id": "BN-132",
+      "name": "Nguyễn Văn D"
+    },
+    {
+      "id": "BN-132",
+      "name": "Nguyễn Văn F"
+    }
+  ],
+  "medical-record": [
+    {
+      "id": "BA-002",
+      "hospitalizedDay": "2019-08-08",
+      "hospitalDischargeDate": "2019-08-29",
+      "reason": "Ung thư gan",
+      "method": "Xạ trị",
+      "doctor": "Lê Văn C",
+      "patient": {
+        "id": "BN-132",
+        "name": "Nguyễn Văn D"
+      }
+    },
+    {
+      "id": "BA-111",
+      "hospitalizedDay": "2022-08-05",
+      "hospitalDischargeDate": "2022-08-06",
+      "reason": "Đau răng",
+      "method": "Nhổ",
+      "doctor": "Lê 9",
+      "patient": {
+        "id": "BN-132",
+        "name": "Nguyễn Văn A"
+      }
+    },
+    {
+      "id": "vxc2313",
+      "hospitalizedDay": "2023-05-10",
+      "hospitalDischargeDate": "2023-05-12",
+      "reason": "fsdf",
+      "method": "dsfsdf",
+      "doctor": "sdfsd",
+      "patient": {
+        "id": "BN-132",
+        "name": "Nguyễn Văn A"
+      }
+    }
+  ]
+}
