@@ -1,0 +1,47 @@
+
+c
+java:S1192"HDefine a constant instead of duplicating this literal "country" 4 times.(ÙÇÅÒüÿÿÿÿ
+\
+java:S1192"FDefine a constant instead of duplicating this literal "email" 4 times.(áÑÈ
+Z
+java:S1226u"DIntroduce a new variable instead of reusing the parameter "country".(£ÓÄä
+e
+java:S2095,"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¥†¦¥
+e
+java:S2095ˆ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¬£Û!
+j
+java:S2095P"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¾¢¥Êÿÿÿÿÿ
+e
+java:S2095o"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ä‰Ññ
+e
+java:S2095<"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(áÆØÅ
+j
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(×ô¾şÿÿÿÿ
+e
+java:S2095`"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(´İÕú
+o	java:S116
+"URename this field "SELECT_ALL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Šû·¤ÿÿÿÿÿ
+j	java:S116"VRename this field "INSERT_INTO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿ›Ü~
+q	java:S116"WRename this field "SELECT_BY_ID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„—œŠøÿÿÿÿ
+l	java:S116"WRename this field "UPDATE_BY_ID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­ÿ—•
+q	java:S116"WRename this field "DELETE_BY_ID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒÑ—®ûÿÿÿÿ
+n	java:S116"YRename this field "SELECT_COUNTRY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ü‰¬Õ
+u	java:S116"[Rename this field "SELECT_SORT_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢ı üÿÿÿÿ
+<
+java:S1170
+"!Make this final field static too.(Šû·¤ÿÿÿÿÿ
+6
+java:S1170"!Make this final field static too.(ÿ›Ü~
+<
+java:S1170"!Make this final field static too.(„—œŠøÿÿÿÿ
+7
+java:S1170"!Make this final field static too.(­ÿ—•
+<
+java:S1170"!Make this final field static too.(ƒÑ—®ûÿÿÿÿ
+7
+java:S1170"!Make this final field static too.(Ü‰¬Õ
+<
+java:S1170"!Make this final field static too.(¢ı üÿÿÿÿ
+A
+java:S1168%"+Return an empty collection instead of null.(¥¹ï
+S	java:S106>"9Replace this use of System.out or System.err by a logger.(µâ£äşÿÿÿÿ

@@ -1,0 +1,37 @@
+
+^
+java:S1192M"HDefine a constant instead of duplicating this literal "country" 3 times.(ç‰—œ
+e
+java:S1192["JDefine a constant instead of duplicating this literal "listFinal" 3 times.(ƒªÈŠùÿÿÿÿ
+P
+java:S1161":Add the "@Override" annotation above this method signature(‹¨¯¿
+f	java:S128!"LEnd this switch case with an unconditional break, return or throw statement.(Øšë¢ýÿÿÿÿ
+U
+java:S1161-":Add the "@Override" annotation above this method signature(Ïû©Öûÿÿÿÿ
+Q	java:S125>"<This block of commented-out lines of code should be removed.(©ŸÛ…
+N
+java:S1854Y"8Remove this useless assignment to local variable "list".(öü¥‹
+Z
+java:S2147a"DCombine this catch with the one at line 95, which has the same body.(ï­£Ä
+J
+java:S1172e"/Remove this unused method parameter "response".(œ½˜æûÿÿÿÿ
+[
+java:S2147s"ECombine this catch with the one at line 113, which has the same body.(ï­£Ä
+S
+java:S1854y"8Remove this useless assignment to local variable "user".(á¸µƒøÿÿÿÿ
+D
+java:S1481y")Remove this unused "user" local variable.(á¸µƒøÿÿÿÿ
+[
+java:S2147"ECombine this catch with the one at line 125, which has the same body.(ï­£Ä
+F
+java:S1172ƒ"/Remove this unused method parameter "response".(ÂÞ€ž
+\
+java:S2147“"ECombine this catch with the one at line 145, which has the same body.(ï­£Ä
+\
+java:S2147 "ECombine this catch with the one at line 158, which has the same body.(ï­£Ä
+\
+java:S2147¬"ECombine this catch with the one at line 170, which has the same body.(ï­£Ä
+H
+java:S1128"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ
+n
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(©±¡û
